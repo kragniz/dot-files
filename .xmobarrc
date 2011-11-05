@@ -1,0 +1,17 @@
+Config { font = "-*-Terminus-*-20-*-*-*-*-*-*-*"
+       , bgColor = "#2d2d2d"
+       , fgColor = "#808080"
+       , position = TopW L 90
+       , commands = [ Run Weather "EGPF" ["-t"," <tempF>F","-L","64","-H","77","--normal","green","--high","red","--low","lightblue"] 36000
+                    , Run Cpu ["-L","3","-H","50","--normal","#9acc79","--high","#d74b73"] 10
+                    , Run Memory ["-t","Mem: <usedratio>%"] 10
+                    , Run Swap [] 10
+                    , Run Date "%a %b %_d %l:%M" "date" 10
+                    , Run Com "uname" ["-n", "-s"] "" 36000
+                    , Run Com "$HOME/git/x-config/music.sh" [""]  "music" 30
+                    , Run StdinReader
+                    ]
+       , sepChar = "%"
+       , alignSep = "}{"
+       , template = "%StdinReader% }{ <fc=#4d4d4d>%music%</fc> | %cpu% | %memory% * %swap% | %uname% | <fc=#ee9a00>%date%</fc>"
+       }
