@@ -1,0 +1,7 @@
+#!/bin/bash
+ 
+# Check if rhythmbox is playing and print that song
+STATUS=$(rhythmbox-client --no-start --print-playing)
+if [[ "$STATUS" != "" ]] && [[ "$STATUS" != "Not playing" ]]; then
+        echo  $(rhythmbox-client --print-playing)
+fi;
