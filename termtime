@@ -1,0 +1,8 @@
+#!/bin/sh
+
+while true
+do
+    date
+    sleep 0.5
+    clear
+done
