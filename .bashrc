@@ -45,10 +45,6 @@ if [ -f /etc/bash_completion ]; then
 . /etc/bash_completion
 fi
 
-
-alias ls='colorls -G'
-alias pine='alpine'
-
 alias vi='vim'
 alias sp='aspell -c'
 PATH=$HOME/bin:/bin:/sbin:/usr/bin:/usr/sbin:/usr/X11R6/bin:/usr/local/bin:/usr/local/sbin:/usr/games:
