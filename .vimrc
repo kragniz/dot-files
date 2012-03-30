@@ -76,3 +76,5 @@ set mouse=a         " Enable the use of the mouse.
 filetype plugin indent on
 syntax on
 
+"save a file as root. Use :w!! and vim will ask you for your password
+ca w!! w !sudo tee >/dev/null "%"

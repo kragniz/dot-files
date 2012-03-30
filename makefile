@@ -1,10 +1,11 @@
 all: vim bash
 
 bash:
-	cp -rav .bashrc ~
+	cp -av .bashrc ~
 
 vim:
-	cp -rav .vimrc ~
+	cp -av .vimrc ~
+	cp -rav .vim ~
 
 backup:
 	date +%R-%F | xargs mkdir
