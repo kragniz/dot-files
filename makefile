@@ -15,5 +15,7 @@ git:
 	cp -a .gitconfig ~
 
 scripts:
-	mkdir ~/bin
+	mkdir -p ~/bin
 	cp -a music-playing ~/bin
+	cp -a sp ~/bin
+	cp -a termtime ~/bin
