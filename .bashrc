@@ -17,18 +17,16 @@ shopt -s checkwinsize
 
 # set a fancy prompt (non-color, unless we know we "want" color)
 case "$TERM" in
-xterm-color) color_prompt=yes;;
+    xterm-color) color_prompt=yes;;
 esac
 
 PS1="┌──[\e[0;33m\u\e[0m@\e[0;34m\h\e[0m]─[\e[2;37m\w\e[0m]\n└─\$ "
 
 # enable color support of ls and also add handy aliases
 if [ "$TERM" != "dumb" ] && [ -x /usr/bin/dircolors ]; then
-eval "`dircolors -b`"
-alias ls='ls --color=auto'
-alias grep='grep --color=auto'
-#alias fgrep='fgrep --color=auto'
-#alias egrep='egrep --color=auto'
+    eval "`dircolors -b`"
+    alias ls='ls --color=auto'
+    alias grep='grep --color=auto'
 fi
 
 # enable programmable completion features (you don't need to enable
@@ -52,6 +50,6 @@ alias la='ls -a'
 alias lla='ls -la'
 
 PATH=$HOME/bin:/bin:/sbin:/usr/bin:/usr/sbin:/usr/X11R6/bin:/usr/local/bin:/usr/local/sbin:/usr/games:
+GPGKEY=E13E7098
 
-export PATH HOME TERM
-export GPGKEY=E13E7098
+export PATH HOME TERM GPGKEY
