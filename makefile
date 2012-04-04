@@ -1,27 +1,25 @@
-GPG = gnupg
-
 all: submodules vim bash git scripts icons gnupg
 
 submodules:
 	git submodule init
 	git submodule update
 
-gnupg:
-	cp -ra $(gnupg) ~/gnupg
+gnupg: submodules
+	cp -rav gnupg ~/.gnupg
 
 bash:
-	cp -a .bashrc ~
+	cp -a bashrc ~/.bashrc
 
 vim:
-	cp -a .vimrc ~
-	cp -ra .vim ~
+	cp -a vimrc ~/.vimrc
+	cp -ra vim ~/.vim
 
 backup:
 	date +%R-%F | xargs mkdir
 	cp ~/.* backup
 
 git:
-	cp -a .gitconfig ~
+	cp -a gitconfig ~/.gitconfig
 
 scripts:
 	mkdir -p ~/bin
