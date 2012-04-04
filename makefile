@@ -1,4 +1,12 @@
-all: vim bash git scripts icons
+GPG = gnupg
+
+all: submodules vim bash git scripts icons gnupg
+
+submodules:
+	git submodule update --init
+
+gnupg:
+	cp -ra $(gnupg) ~/gnupg
 
 bash:
 	cp -a .bashrc ~
