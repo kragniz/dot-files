@@ -3,7 +3,8 @@ GPG = gnupg
 all: submodules vim bash git scripts icons gnupg
 
 submodules:
-	git submodule update --init
+	git submodule init
+	git submodule update
 
 gnupg:
 	cp -ra $(gnupg) ~/gnupg
