@@ -39,6 +39,8 @@ fi
 alias vi='vim'
 alias sp='aspell -c'
 
+alias mpg321='mpg321 -q'
+
 #be really lazy
 alias v='vim'
 alias c='cd'
@@ -49,7 +51,12 @@ alias ll='ls -l'
 alias la='ls -a'
 alias lla='ls -la'
 
+#debian stuff
+alias dquilt="dquilt --quiltrc=${HOME}/.quiltrc-dpkg"
+
 PATH=$HOME/bin:/bin:/sbin:/usr/bin:/usr/sbin:/usr/X11R6/bin:/usr/local/bin:/usr/local/sbin:/usr/games:
 GPGKEY=E13E7098
+DEBEMAIL="kragniz@gmail.com"
+DEBFULLNAME="Louis Taylor"
 
-export PATH HOME TERM GPGKEY
+export PATH HOME TERM GPGKEY DEBEMAIL DEBFULLNAME

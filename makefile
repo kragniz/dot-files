@@ -1,4 +1,4 @@
-all: submodules vim bash git scripts icons gnupg
+all: submodules vim bash git scripts icons gnupg debian
 
 submodules:
 	git submodule init
@@ -30,3 +30,6 @@ scripts:
 icons:
 	mkdir -p ~/.icons/gnome/25x24/places/
 	cp start-here.svg ~/.icons/gnome/24x24/places/start-here.svg
+
+debian:
+	cp -a quiltrc-dpkg ~/.quiltrc-dpkg
