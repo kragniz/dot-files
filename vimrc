@@ -1,13 +1,8 @@
-" .vimrc
-" See: http://vimdoc.sourceforge.net/htmldoc/options.html for details
-
 " For multi-byte character support (CJK support, for example):
-"set fileencodings=ucs-bom,utf-8,cp936,big5,euc-jp,euc-kr,gb18030,latin1
-       
+"set fileencodings=ucs-bom,utf-8,cp936,big5,euc-jp,euc-kr,gb18030,latin1       
 set tabstop=4       " Number of spaces that a <Tab> in the file counts for.
- 
 set shiftwidth=4    " Number of spaces to use for each step of (auto)indent.
- 
+
 set expandtab       " Use the appropriate number of spaces to insert a <Tab>.
                     " Spaces are used in indents with the '>' and '<' commands
                     " and when 'autoindent' is on. To insert a real tab when
@@ -73,6 +68,11 @@ set ruler           " Show the line and column number of the cursor position,
  
 set mouse=a         " Enable the use of the mouse.
 
+set dict=/usr/share/dict/british-english
+set complete-=k complete+=k
+
+set ofu=syntaxcomplete#Complete
+
 "Use TAB to complete when typing words, else inserts TABs as usual.
 "Uses dictionary and source files to find matching words to complete.
 function! Tab_Or_Complete()
@@ -82,9 +82,10 @@ function! Tab_Or_Complete()
     return "\<Tab>"
   endif
 endfunction
-:inoremap <Tab> <C-R>=Tab_Or_Complete()<CR>
-:set dictionary="/usr/share/dict/british-english"
- 
+inoremap <Tab> <C-R>=Tab_Or_Complete()<CR>
+
+"set completeopt=longest,menuone
+
 filetype plugin indent on
 syntax on
 
