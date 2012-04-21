@@ -83,7 +83,7 @@ function! Tab_Or_Complete()
   endif
 endfunction
 :inoremap <Tab> <C-R>=Tab_Or_Complete()<CR>
-:set dictionary="/usr/dict/words"
+:set dictionary="/usr/share/dict/british-english"
  
 filetype plugin indent on
 syntax on
