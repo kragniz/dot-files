@@ -1,4 +1,4 @@
-all: submodules vim bash git scripts icons gnupg debian
+all: vi bash git scripts icons
 
 submodules:
 	git submodule init
@@ -10,13 +10,9 @@ gnupg: submodules
 bash:
 	cp -a bashrc ~/.bashrc
 
-vim:
+vi:
 	cp -a vimrc ~/.vimrc
-	cp -ra vim ~/.vim
-
-backup:
-	date +%R-%F | xargs mkdir
-	cp ~/.* backup
+	cp -rav vim ~/.vim
 
 git:
 	cp -a gitconfig ~/.gitconfig
