@@ -21,6 +21,7 @@ case "$TERM" in
 esac
 
 PS1="┌──[\e[0;33m\u\e[0m@\e[0;34m\h\e[0m]─[\e[2;37m\w\e[0m]\n└─\$ "
+PS2="└─>"
 
 # enable color support of ls and also add handy aliases
 if [ "$TERM" != "dumb" ] && [ -x /usr/bin/dircolors ]; then
@@ -39,8 +40,6 @@ fi
 alias vi='vim'
 alias sp='aspell -c'
 
-alias mpg321='mpg321 -q'
-
 #be really lazy
 alias v='vim'
 alias c='cd'
@@ -51,8 +50,13 @@ alias ll='ls -l'
 alias la='ls -a'
 alias lla='ls -la'
 
+#pretend I'm in vi
+alias ':x'='exit'
+alias ':q'='exit'
+
 #debian stuff
 alias dquilt="dquilt --quiltrc=${HOME}/.quiltrc-dpkg"
+alias update="sudo apt-get update && sudo apt-get dist-upgrade"
 
 PATH=$HOME/bin:/bin:/sbin:/usr/bin:/usr/sbin:/usr/X11R6/bin:/usr/local/bin:/usr/local/sbin:/usr/games:
 GPGKEY=E13E7098

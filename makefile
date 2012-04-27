@@ -1,4 +1,4 @@
-all: vi bash git scripts icons
+all: vi bash git scripts icons tmux X
 
 submodules:
 	git submodule init
@@ -9,6 +9,7 @@ gnupg: submodules
 
 bash:
 	cp -a bashrc ~/.bashrc
+	cp -a inputrc ~/.inputrc
 
 vi:
 	cp -a vimrc ~/.vimrc
@@ -29,3 +30,9 @@ icons:
 
 debian:
 	cp -a quiltrc-dpkg ~/.quiltrc-dpkg
+
+tmux:
+	cp -a tmux.conf ~/.tmux.conf
+
+X:
+	cp -a Xdefaults ~/.Xdefaults

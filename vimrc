@@ -68,7 +68,7 @@ set ruler           " Show the line and column number of the cursor position,
  
 set mouse=a         " Enable the use of the mouse.
 
-set dict=/usr/share/dict/british-english
+"set dict=/usr/share/dict/british-english
 set complete-=k complete+=k
 
 set ofu=syntaxcomplete#Complete
