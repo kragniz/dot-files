@@ -25,8 +25,8 @@ scripts:
 	cp -a termtime ~/bin
 
 icons:
-	mkdir -p ~/.icons/gnome/25x24/places/
-	cp start-here.svg ~/.icons/gnome/24x24/places/start-here.svg
+	mkdir -p ~/.icons/gnome/24x24/places/
+	cp start-here.svg ~/.icons/gnome/24x24/places
 
 debian:
 	cp -a quiltrc-dpkg ~/.quiltrc-dpkg
