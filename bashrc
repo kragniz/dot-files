@@ -1,5 +1,3 @@
-# ~/.bashrc: executed by bash(1) for non-login shells.
-
 # If not running interactively, don't do anything
 [ -z "$PS1" ] && return
 
@@ -7,6 +5,8 @@
 export HISTCONTROL=ignoredups
 # ... and ignore same sucessive entries.
 export HISTCONTROL=ignoreboth
+# flush history to the history file before each command
+export PROMPT_COMMAND='history -a'
 
 # check the window size after each command and, if necessary,
 # update the values of LINES and COLUMNS.
@@ -43,9 +43,9 @@ alias sp='aspell -c'
 #be really lazy
 alias v='vim'
 alias c='cd'
-alias l='ls'
 alias g='git'
 alias gt='git'
+alias l='ls'
 alias ll='ls -l'
 alias la='ls -a'
 alias lla='ls -la'
@@ -57,6 +57,8 @@ alias ':q'='exit'
 #debian stuff
 alias dquilt="dquilt --quiltrc=${HOME}/.quiltrc-dpkg"
 alias update="sudo apt-get update && sudo apt-get dist-upgrade"
+
+alias eth="sudo dhclient eth0"
 
 PATH=$HOME/bin:/bin:/sbin:/usr/bin:/usr/sbin:/usr/X11R6/bin:/usr/local/bin:/usr/local/sbin:/usr/games:
 GPGKEY=E13E7098
