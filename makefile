@@ -1,4 +1,4 @@
-all: vi bash git scripts icons tmux X
+all: vi bash git scripts icons tmux X xmonad
 
 submodules:
 	git submodule init
@@ -23,6 +23,7 @@ scripts:
 	cp -a music-playing ~/bin
 	cp -a sp ~/bin
 	cp -a termtime ~/bin
+	cp -a vol ~/bin
 
 icons:
 	mkdir -p ~/.icons/gnome/24x24/places/
@@ -33,6 +34,13 @@ debian:
 
 tmux:
 	cp -a tmux.conf ~/.tmux.conf
+	cmake tmux-mem-cpu-load
+	make -C tmux-mem-cpu-load all
+	cp -a tmux-mem-cpu-load/tmux-mem-cpu-load ~/bin/tmux-mem-cpu-load
 
 X:
 	cp -a Xdefaults ~/.Xdefaults
+
+xmonad:
+	mkdir -p ~/.xmonad
+	cp xmonad.hs ~/.xmonad
