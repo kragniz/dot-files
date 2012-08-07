@@ -40,7 +40,7 @@ set backspace=2     " Influences the working of <BS>, <Del>, CTRL-W
  
 set autoindent      " Copy indent from current line when starting a new line
                     " (typing <CR> in Insert mode or when using the "o" or "O"
-                    " command).
+                    " command).function! Chomp(str)
  
 set textwidth=79    " Maximum width of text that is being inserted. A longer
                     " line will be broken after white space to get this width.
@@ -52,7 +52,7 @@ set formatoptions=c,q,r,t " This is a sequence of letters which describes how
                     " ------    ---------------------------------------
                     " c         Auto-wrap comments using textwidth, inserting
                     "           the current comment leader automatically.
-                    " q         Allow formatting of comments with "gq".
+                    " q         Allow formatting of comments with "gq"." 
                     " r         Automatically insert the current comment leader
                     "           after hitting <Enter> in Insert mode. 
                     " t         Auto-wrap text using textwidth (does not apply
@@ -61,18 +61,22 @@ set formatoptions=c,q,r,t " This is a sequence of letters which describes how
 set ruler           " Show the line and column number of the cursor position,
                     " separated by a comma.
  
-"set background=dark " When set to "dark", Vim will try to use colors that look
+set listchars=tab:>.,trail:.,extends:#,nbsp:. " Highlight problematic whitespace
+
+set gdefault        " the /g flag on :s substitutions by default
+
+" set background=dark " When set to "dark", Vim will try to use colors that lo" ok
                     " good on a dark background. When set to "light", Vim will
                     " try to use colors that look good on a light background.
                     " Any other value is illegal.
  
 set mouse=a         " Enable the use of the mouse.
 
-"set dict=/usr/share/dict/british-english
+set dict=/usr/share/dict/british-english
 set complete-=k complete+=k
 
 set ofu=syntaxcomplete#Complete
-
+" 
 "Use TAB to complete when typing words, else inserts TABs as usual.
 "Uses dictionary and source files to find matching words to complete.
 function! Tab_Or_Complete()
@@ -91,3 +95,20 @@ syntax on
 
 "save a file as root. Use :w!! and vim will ask you for your password
 ca w!! w !sudo tee >/dev/null "%"
+
+function! Chomp(str)
+  return substitute(a:str, '\n$', '', '')
+endfunction
+
+function! DmenuOpen(cmd)
+  let fname = Chomp(system("gitfilepicker"))
+  if empty(fname)
+    return
+  endif
+  execute a:cmd . " " . fname
+endfunction
+
+" use ctrl-t to open file in a new tab
+" use ctrl-f to open file in current buffer
+map <c-t> :call DmenuOpen("tabe")<cr>
+map <c-f> :call DmenuOpen("e")<cr>

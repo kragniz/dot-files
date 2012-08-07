@@ -1,0 +1,8 @@
+#!/bin/bash
+
+#dat gnome
+gnome-settings-deamon
+
+mpd
+mpdscribble
+conky

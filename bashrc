@@ -8,6 +8,10 @@ export HISTCONTROL=ignoreboth
 # flush history to the history file before each command
 export PROMPT_COMMAND='history -a'
 
+if [ -f /etc/bash_completion ]; then
+. /etc/bash_completion
+fi
+
 # check the window size after each command and, if necessary,
 # update the values of LINES and COLUMNS.
 shopt -s checkwinsize
@@ -30,19 +34,17 @@ cd() {
       builtin cd "$@"; ls
   }
 
-# enable programmable completion features (you don't need to enable
-# this, if it's already enabled in /etc/bash.bashrc and /etc/profile
-# sources /etc/bash.bashrc).
-if [ -f /etc/bash_completion ]; then
-. /etc/bash_completion
-fi
-
 alias vi='vim'
 alias sp='aspell -c'
 
 alias music='mpg123 -ZvC --title --list ~/playlist'
-play() {
-    mpg123 -zvC --title --list "$@"
+
+mpd() {
+    mpd
+    pidof mpdscribble >& /dev/null
+    if [ $? -ne 0 ]; then
+         mpdscribble &
+    fi
 }
 
 #be really lazy

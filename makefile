@@ -1,4 +1,4 @@
-all: vi bash git scripts icons tmux X xmonad
+all: vi bash git scripts icons tmux X openbox dmenu mpd
 
 submodules:
 	git submodule init
@@ -20,11 +20,8 @@ git:
 
 scripts:
 	mkdir -p ~/bin
-	cp -a music-playing ~/bin
-	cp -a sp ~/bin
-	cp -a termtime ~/bin
-	cp -a vol ~/bin
-
+	cp -va script/* ~/bin
+	
 icons:
 	mkdir -p ~/.icons/gnome/24x24/places/
 	cp start-here.svg ~/.icons/gnome/24x24/places
@@ -34,13 +31,27 @@ debian:
 
 tmux:
 	cp -a tmux.conf ~/.tmux.conf
-	cmake tmux-mem-cpu-load
-	make -C tmux-mem-cpu-load all
-	cp -a tmux-mem-cpu-load/tmux-mem-cpu-load ~/bin/tmux-mem-cpu-load
 
 X:
 	cp -a Xdefaults ~/.Xdefaults
 
-xmonad:
-	mkdir -p ~/.xmonad
-	cp xmonad.hs ~/.xmonad
+openbox:
+	mkdir -p ~/.config/openbox
+	cp -a autostart ~/.config/openbox/autostart.sh
+	cp -a openboxrc.xml ~/.config/openbox/rc.xml
+	cp -a conkyrc ~/.conkyrc
+
+dmenu:
+	cp -a dmenurc ~/.dmenurc
+
+mpd:
+	cp -a mpdconf ~/.mpdconf
+	mkdir -p ~/.mpdscribble
+	cp mpdscribble ~/.mpdscribble/mpdscribble.conf
+
+initmpd:
+	mkdir -p ~/.mpd/playlists
+	touch ~/.mpd/mpd.db
+	touch ~/.mpd/mpd.log
+	touch ~/.mpd/mpd.pid
+	touch ~/.mpd/mpdstate

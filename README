@@ -1,4 +1,10 @@
 This is a bunch of my personal configuration files for various pieces of
 software. Feel free to clone/change/do whatever to the stuff in here.
 
-You will need cmake and a C++ compiler for the fancy tmux status bar.
+Packages you should install:
+    conky
+    openbox
+    dmenu
+    mpd
+    mpdscribble
+    tmux
