@@ -9,7 +9,7 @@ else
 fi
 #$( echo -e "Play All\n$( mpc ls "$ARTIST" )"
 
-artist=$( echo -e "Next\nPause\n$(mpc list artist| sort -n)"| $DMENU -i -p "ARTIST:" -l 10)
+artist=$( echo -e "Next\nPause\n$(mpc list artist| sort -n)"| $DMENU -i -l 10)
 dmError=$?
 
 if [[ $dmError -ne 0 ]]; then
@@ -30,18 +30,30 @@ if [[ $artist = 'Pause' ]]; then
     fi
 fi
 
+if [[ $artist = 'Next' ]]; then
+    echo "next track..."
+    mpc next
+    exit
+fi
+
 if [[ $artist = '' ]]; then
     echo "playing everything"
-    mpc ls | mpc add && mpc shuffle && mpc next
+    mpc ls | mpc add; mpc shuffle && mpc next
+    exit
 else
-
     if [[ $(mpc list album artist "$artist" | wc -l) > 1 ]]; then
-        album=$(mpc list album artist "$artist"| sort -n | $DMENU -i -p "ALBUM:" -l 3)
+        album=$( echo -e "All\n$(mpc list album artist "$artist")"| sort -n | \
+        $DMENU -i -p "ALBUM:" -l 4)
+        mpdstatus=$?
+    fi
+
+    if [[ $mpdstatus -ne 0 ]]; then
+            exit 1
     fi
 
     mpc clear >> /dev/null
 
-if [[ $album = '' ]]; then
+if [[ $album = 'All' ]]; then
     echo "Playlist cleared, Adding all songs available from $artist to the playlist"
     mpc find artist "$artist" | mpc add
 else
