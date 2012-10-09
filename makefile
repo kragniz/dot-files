@@ -23,6 +23,8 @@ scripts:
 	cp -a music-playing ~/bin
 	cp -a sp ~/bin
 	cp -a termtime ~/bin
+	mkdir -p ~/.irssi/scripts/autorun
+	cp -a irssi/nickcolor.pl ~/.irssi/scripts/autorun
 
 icons:
 	mkdir -p ~/.icons/gnome/24x24/places/
