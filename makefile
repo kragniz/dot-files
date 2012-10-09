@@ -1,4 +1,4 @@
-all: vi bash git scripts icons tmux X
+all: vi bash git scripts icons tmux X openbox dmenu mpd
 
 submodules:
 	git submodule init
@@ -20,12 +20,10 @@ git:
 
 scripts:
 	mkdir -p ~/bin
-	cp -a music-playing ~/bin
-	cp -a sp ~/bin
-	cp -a termtime ~/bin
+	cp -va script/* ~/bin
 	mkdir -p ~/.irssi/scripts/autorun
 	cp -a irssi/nickcolor.pl ~/.irssi/scripts/autorun
-
+	
 icons:
 	mkdir -p ~/.icons/gnome/24x24/places/
 	cp start-here.svg ~/.icons/gnome/24x24/places
@@ -38,3 +36,24 @@ tmux:
 
 X:
 	cp -a Xdefaults ~/.Xdefaults
+
+openbox:
+	mkdir -p ~/.config/openbox
+	cp -a autostart ~/.config/openbox/autostart.sh
+	cp -a openboxrc.xml ~/.config/openbox/rc.xml
+	cp -a conkyrc ~/.conkyrc
+
+dmenu:
+	cp -a dmenurc ~/.dmenurc
+
+mpd:
+	cp -a mpdconf ~/.mpdconf
+	mkdir -p ~/.mpdscribble
+	cp mpdscribble ~/.mpdscribble/mpdscribble.conf
+
+initmpd:
+	mkdir -p ~/.mpd/playlists
+	touch ~/.mpd/mpd.db
+	touch ~/.mpd/mpd.log
+	touch ~/.mpd/mpd.pid
+	touch ~/.mpd/mpdstate

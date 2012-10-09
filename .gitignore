@@ -1,2 +1,7 @@
 *~
 *.bak
+tmux-mem-cpu-load/CMakeFiles/*
+tmux-mem-cpu-load/CMakeCache.txt
+tmux-mem-cpu-load/cmake_install.cmake
+tmux-mem-cpu-load/tmux-mem-cpu-load
+tmux-mem-cpu-load/Makefile

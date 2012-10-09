@@ -1,0 +1,11 @@
+[mpdscribble] 
+log = /home/louis/.mpdscribble/mpdscribble.log
+verbose = 2
+sleep = 1
+musicdir = /home/louis/music
+
+[last.fm]
+url = http://post.audioscrobbler.com/
+username = lpty
+password = fea0f1f6fede90bd0a925b4194deac11
+journal = /home/louis/.mpdscribble/lastfm.journal

@@ -1,0 +1,51 @@
+#WINDOW OPTIONS
+double_buffer yes
+own_window no
+own_window_transparent yes
+alignment bottom
+own_window_type panel
+own_window_hints undecorate,sticky,skip_taskbar,skip_pager 
+
+#POSITION
+gap_x 10
+gap_y 5
+
+#BORDERS
+draw_borders no
+
+#SHADES
+draw_shades no
+
+#BEHAVIOR
+update_interval 1
+
+#COLOR
+own_window_colour 000000
+default_color d74b73
+color1 b5b5b5
+color2 9acc79 
+color3 505050
+
+
+color8 d74b73
+color9 9acc79
+color4 77b6c5
+color5 a488d9
+color6 7fcab3
+color7 8d8d8d
+
+#FONT
+use_xft yes
+uppercase yes
+use_spacer left
+pad_percents 3
+xftfont Terminus:pixelsize=11
+
+# Expands to the length of screen ()
+minimum_size 1260
+maximum_width 2000
+
+TEXT
+${color}CPU:${color1} ${cpu}%  ${cpubar 6,40}  ${color2}MEM:${color1} $mem/$memmax  ${membar 6,40}\
+${alignr}${if_mpd_playing} ${color8}${scroll 20 $mpd_artist} ${color4}${scroll 20 $mpd_album} ${color9}${scroll 30 $mpd_title} ${color1}${mpd_bar 6,40} ${endif} \
+${alignr}| ${color1}${time %B %d %Y}${color1} |${time %_I:%M %p}
