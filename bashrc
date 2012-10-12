@@ -34,6 +34,7 @@ cd() {
       builtin cd "$@"; ls
   }
 
+alias editor='vim'
 alias vi='vim'
 alias sp='aspell -c'
 
