@@ -37,7 +37,7 @@ X:
 
 openbox:
 	mkdir -p ~/.config/openbox
-	cp -a autostart ~/.config/openbox/autostart.sh
+	cp -a autostart ~/.config/openbox/autostart
 	cp -a openboxrc.xml ~/.config/openbox/rc.xml
 	cp -a conkyrc ~/.conkyrc
 

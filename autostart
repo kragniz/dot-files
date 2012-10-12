@@ -1,8 +1,10 @@
 #!/bin/bash
 
-#dat gnome
-gnome-settings-deamon
+sleep 5s
 
-mpd
-mpdscribble
-conky
+#dat gnome
+gnome-settings-deamon &
+
+mpd &
+mpdscribble &
+conky &

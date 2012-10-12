@@ -43,7 +43,7 @@ xftfont Terminus:pixelsize=11
 
 # Expands to the length of screen ()
 minimum_size 1260
-maximum_width 2000
+maximum_width 1000
 
 TEXT
 ${color}CPU:${color1} ${cpu}%  ${cpubar 6,40}  ${color2}MEM:${color1} $mem/$memmax  ${membar 6,40}\
