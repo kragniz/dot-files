@@ -72,7 +72,7 @@ set gdefault        " the /g flag on :s substitutions by default
  
 set mouse=a         " Enable the use of the mouse.
 
-set dict=/usr/share/dict/british-english
+set dict=/usr/share/dict/words
 set complete-=k complete+=k
 
 set ofu=syntaxcomplete#Complete

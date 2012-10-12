@@ -21,6 +21,8 @@ git:
 scripts:
 	mkdir -p ~/bin
 	cp -va script/* ~/bin
+	mkdir -p ~/.irssi/scripts/autorun
+	cp -a irssi/nickcolor.pl ~/.irssi/scripts/autorun
 	
 icons:
 	mkdir -p ~/.icons/gnome/24x24/places/
