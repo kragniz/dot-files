@@ -48,6 +48,10 @@ mpd() {
     fi
 }
 
+mkc() {
+    mkdir "$@" && cd "$@"
+}
+
 #be really lazy
 alias v='vim'
 alias c='cd'
