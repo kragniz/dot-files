@@ -55,6 +55,11 @@ mkc() {
 #check your internet connection
 alias pingg='ping google.com'
 
+alias aber='ssh lot15@aber.ac.uk'
+alias devio='ssh lpt@devio.us'
+alias 42nd='ssh louis@42nd.org'
+alias srcf='ssh st435@srcf.net'
+
 #be really lazy
 alias v='vim'
 alias c='cd'
