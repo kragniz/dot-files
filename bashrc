@@ -52,6 +52,9 @@ mkc() {
     mkdir "$@" && cd "$@"
 }
 
+#check your internet connection
+alias pingg='ping google.com'
+
 #be really lazy
 alias v='vim'
 alias c='cd'
