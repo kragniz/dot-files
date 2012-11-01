@@ -10,6 +10,7 @@ gnupg: submodules
 bash:
 	cp -a bashrc ~/.bashrc
 	cp -a inputrc ~/.inputrc
+	cp -a bash_profile ~/.bash_profile
 
 vi:
 	cp -a vimrc ~/.vimrc
