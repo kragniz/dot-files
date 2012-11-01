@@ -1,7 +1,10 @@
 #use history search
-
 #up
 "\e[A": history-search-backward
 #down
 "\e[B": history-search-forward
 
+set completion-ignore-case on
+set editing-mode vi
+set keymap vi
+set convert-meta on

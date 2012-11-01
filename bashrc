@@ -1,13 +1,6 @@
 # If not running interactively, don't do anything
 [ -z "$PS1" ] && return
 
-# don't put duplicate lines in the history. See bash(1) for more options
-export HISTCONTROL=ignoredups
-# ... and ignore same sucessive entries.
-export HISTCONTROL=ignoreboth
-# flush history to the history file before each command
-export PROMPT_COMMAND='history -a'
-
 if [ -f /etc/bash_completion ]; then
 . /etc/bash_completion
 fi
@@ -26,7 +19,7 @@ PS2="└─>"
 if [ "$TERM" != "dumb" ] && [ -x /usr/bin/dircolors ]; then
     eval "`dircolors -b`"
     alias ls='ls --color=auto'
-    alias grep='grep --color=auto'
+    alias grep='egrep --color=auto'
 fi
 
 # ls whenever cding to a directory
@@ -90,7 +83,13 @@ GPGKEY=E13E7098
 DEBEMAIL="kragniz@gmail.com"
 DEBFULLNAME="Louis Taylor"
 
-export PATH HOME TERM GPGKEY DEBEMAIL DEBFULLNAME
+# don't put duplicate lines in the history and ignore same sucessive entries.
+HISTCONTROL=ignoreboth
+# flush history to the history file before each command
+PROMPT_COMMAND='history -a'
+EDITOR=vim
+
+export PATH HOME TERM EDITOR PROMPT_COMMAND HISTCONTROL GPGKEY DEBEMAIL DEBFULLNAME
 
 #Have some nice colours in ttys
 function c1 {
