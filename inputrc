@@ -1,10 +1,13 @@
-#use history search
-#up
-"\e[A": history-search-backward
-#down
-"\e[B": history-search-forward
-
-set completion-ignore-case on
+#use vi mode keybinding
 set editing-mode vi
-set keymap vi
 set convert-meta on
+
+#blick on matching brackets
+set blink-matching-paren on
+
+#use history search
+"\e[A": history-search-backward
+"\e[B": history-search-forward
+"\eOA": history-search-backward
+"\eOB": history-search-forward
+set completion-ignore-case on

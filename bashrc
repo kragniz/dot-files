@@ -27,12 +27,6 @@ cd() {
       builtin cd "$@"; ls
   }
 
-alias editor='vim'
-alias vi='vim'
-alias sp='aspell -c'
-
-alias music='mpg123 -ZvC --title --list ~/playlist'
-
 mpd() {
     mpd
     pidof mpdscribble >& /dev/null
@@ -44,6 +38,12 @@ mpd() {
 mkc() {
     mkdir "$@" && cd "$@"
 }
+
+alias editor='vim'
+alias vi='vim'
+alias sp='aspell -c'
+
+alias music='mpg123 -ZvC --title --list ~/playlist'
 
 #check your internet connection
 alias pingg='ping google.com'
