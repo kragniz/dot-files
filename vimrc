@@ -1,5 +1,4 @@
-" For multi-byte character support (CJK support, for example):
-"set fileencodings=ucs-bom,utf-8,cp936,big5,euc-jp,euc-kr,gb18030,latin1       
+set fileencodings=ucs-bom,utf-8,cp936,big5,euc-jp,euc-kr,gb18030,latin1       
 set tabstop=4       " Number of spaces that a <Tab> in the file counts for.
 set shiftwidth=4    " Number of spaces to use for each step of (auto)indent.
 
@@ -17,10 +16,7 @@ set showcmd         " Show (partial) command in status line.
 
 set number          " Show line numbers.
 
-set showmatch       " When a bracket is inserted, briefly jump to the matching
-                    " one. The jump is only done if the match can be seen on the
-                    " screen. The time to show the match can be set with
-                    " 'matchtime'.
+set showmatch
  
 set hlsearch        " When there is a previous search pattern, highlight all
                     " its matches.
@@ -28,7 +24,7 @@ set hlsearch        " When there is a previous search pattern, highlight all
 set incsearch       " While typing a search command, show immediately where the
                     " so far typed pattern matches.
  
-set ignorecase      " Ignore case in search patterns.
+set ignorecase
  
 set smartcase       " Override the 'ignorecase' option if the search pattern
                     " contains upper case characters.
@@ -46,17 +42,17 @@ set textwidth=79    " Maximum width of text that is being inserted. A longer
                     " line will be broken after white space to get this width.
  
 set formatoptions=c,q,r,t " This is a sequence of letters which describes how
-                    " automatic formatting is to be done.
-                    "
-                    " letter    meaning when present in 'formatoptions'
-                    " ------    ---------------------------------------
-                    " c         Auto-wrap comments using textwidth, inserting
-                    "           the current comment leader automatically.
-                    " q         Allow formatting of comments with "gq"." 
-                    " r         Automatically insert the current comment leader
-                    "           after hitting <Enter> in Insert mode. 
-                    " t         Auto-wrap text using textwidth (does not apply
-                    "           to comments)
+                        " automatic formatting is to be done.
+                        "
+                        " letter    meaning when present in 'formatoptions'
+                        " ------    ---------------------------------------
+                        " c         Auto-wrap comments using textwidth, inserting
+                        "           the current comment leader automatically.
+                        " q         Allow formatting of comments with "gq"." 
+                        " r         Automatically insert the current comment leader
+                        "           after hitting <Enter> in Insert mode. 
+                        " t         Auto-wrap text using textwidth (does not apply
+                        "           to comments)
  
 set ruler           " Show the line and column number of the cursor position,
                     " separated by a comma.
@@ -65,12 +61,11 @@ set listchars=tab:>.,trail:.,extends:#,nbsp:. " Highlight problematic whitespace
 
 set gdefault        " the /g flag on :s substitutions by default
 
-" set background=dark " When set to "dark", Vim will try to use colors that lo" ok
-                    " good on a dark background. When set to "light", Vim will
-                    " try to use colors that look good on a light background.
-                    " Any other value is illegal.
- 
+" set background=dark
+"
 set mouse=a         " Enable the use of the mouse.
+
+set so=4            " Add a scrolloff number of lines above and below the cursor
 
 set dict=/usr/share/dict/words
 set complete-=k complete+=k

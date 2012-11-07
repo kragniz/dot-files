@@ -79,17 +79,17 @@ alias update="sudo apt-get update && sudo apt-get dist-upgrade"
 alias eth="sudo dhclient eth0"
 
 PATH=$HOME/bin:/bin:/sbin:/usr/bin:/usr/sbin:/usr/X11R6/bin:/usr/local/bin:/usr/local/sbin:/usr/games:
-GPGKEY=E13E7098
-DEBEMAIL="kragniz@gmail.com"
-DEBFULLNAME="Louis Taylor"
-
 # don't put duplicate lines in the history and ignore same sucessive entries.
 HISTCONTROL=ignoreboth
 # flush history to the history file before each command
 PROMPT_COMMAND='history -a'
 EDITOR=vim
+export PATH HOME TERM EDITOR PROMPT_COMMAND HISTCONTROL
 
-export PATH HOME TERM EDITOR PROMPT_COMMAND HISTCONTROL GPGKEY DEBEMAIL DEBFULLNAME
+GPGKEY=E13E7098
+DEBEMAIL="kragniz@gmail.com"
+DEBFULLNAME="Louis Taylor"
+export GPGKEY DEBEMAIL DEBFULLNAME
 
 #Have some nice colours in ttys
 function c1 {
