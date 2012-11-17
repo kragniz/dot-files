@@ -2,7 +2,7 @@
 set editing-mode vi
 set convert-meta on
 
-#blick on matching brackets
+#blink on matching brackets
 set blink-matching-paren on
 
 #use history search

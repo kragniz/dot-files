@@ -3,4 +3,6 @@ if [ -f ~/.bashrc ]; then
 fi
 
 export PATH="$HOME/.rbenv/bin:$PATH"
-eval "$(rbenv init -)"
+if [ -f ~/.rbenv/bin/rbenv ]; then
+    eval "$(rbenv init -)"
+fi
