@@ -1,4 +1,4 @@
-all: vi bash git scripts icons tmux X openbox dmenu mpd
+all: vi bash git scripts icons tmux X openbox dmenu mpd irc
 
 submodules:
 	git submodule init
@@ -22,8 +22,11 @@ git:
 scripts:
 	mkdir -p ~/bin
 	cp -va script/* ~/bin
+
+irc:
 	mkdir -p ~/.irssi/scripts/autorun
-	cp -a irssi/nickcolor.pl ~/.irssi/scripts/autorun
+	cp -arv irssi/autorun ~/.irssi/scripts
+	cp irssi/startup ~.irssi
 	
 icons:
 	mkdir -p ~/.icons/gnome/24x24/places/
