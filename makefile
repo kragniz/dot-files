@@ -1,4 +1,4 @@
-all: vi bash git scripts icons tmux X openbox dmenu mpd irc
+all: ~/.vimrc bash git ~/bin icons tmux X openbox dmenu mpd irc gitflow
 
 submodules:
 	git submodule init
@@ -12,16 +12,20 @@ bash:
 	cp -a inputrc ~/.inputrc
 	cp -a bash_profile ~/.bash_profile
 
-vi:
+~/.vimrc: vimrc vim
 	cp -a vimrc ~/.vimrc
 	cp -rav vim ~/.vim
 
 git:
 	cp -a gitconfig ~/.gitconfig
 
-scripts:
+gitflow:
+	git clone --recursive git://github.com/nvie/gitflow.git
+	make -C gitflow install prefix=$$HOME
+
+~/bin: bin
 	mkdir -p ~/bin
-	cp -va script/* ~/bin
+	cp -va bin/* ~/bin
 
 irc:
 	mkdir -p ~/.irssi/scripts/autorun
