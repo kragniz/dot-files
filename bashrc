@@ -56,6 +56,7 @@ alias srcf='ssh st435@srcf.net'
 #be really lazy
 alias v='vim'
 alias c='cd'
+alias c.='\cd ..'
 alias g='git'
 alias gt='git'
 alias l='ls'
