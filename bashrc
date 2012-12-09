@@ -57,12 +57,20 @@ alias srcf='ssh st435@srcf.net'
 alias v='vim'
 alias c='cd'
 alias c.='\cd ..'
-alias g='git'
-alias gt='git'
+
 alias l='ls'
 alias ll='ls -l'
 alias la='ls -a'
 alias lla='ls -la'
+
+alias g='git'
+alias gt='git'
+alias gaa='git add -A'
+alias gp='git push'
+alias gd='git diff'
+alias gc='git commit'
+alias gst='git status'
+alias gl='git log --stat'
 
 #be super duper lazy
 alias up='vol up'
