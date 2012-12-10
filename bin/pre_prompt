@@ -1,0 +1,17 @@
+#!/usr/bin/env python
+from os import environ as _
+import subprocess
+
+class col(object):
+    end = '\033[0m'
+
+    __col = '\033[%sm'
+
+    def col(n):
+        return __col % n
+
+cwd = _.get('PWD').replace(_.get('HOME'), '~')
+
+git = subprocess.Popen('git_get_branch', stdout=subprocess.PIPE).communicate()[0].strip()
+
+print cwd, git
