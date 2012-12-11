@@ -3,8 +3,8 @@
 sleep 5s
 
 #dat gnome
-gnome-settings-deamon &
+#gnome-settings-deamon &
 
-mpd &
-mpdscribble &
+#mpd &
+#mpdscribble &
 conky &

@@ -12,8 +12,11 @@ shopt -s checkwinsize
 # make less more friendly for non-text input files, see lesspipe(1)
 [ -x /usr/bin/lesspipe ] && eval "$(lesspipe)"
 
-PS1="┌──[\e[0;33m\u\e[0m@\e[0;34m\h\e[0m]─[\e[2;37m\w\e[0m]\n└─\$ "
-PS2="└─>"
+# flush history to the history file before each command and set the prompt
+PROMPT_COMMAND='history -a && ~/bin/pre_prompt'
+
+PS1="\e[00;37m└─\$\e[00m "
+PS2="\e[00;37m└─>\e[00m "
 
 # enable color support of ls and also add handy aliases
 if [ "$TERM" != "dumb" ] && [ -x /usr/bin/dircolors ]; then
@@ -53,9 +56,17 @@ alias devio='ssh lpt@devio.us'
 alias 42nd='ssh louis@42nd.org'
 alias srcf='ssh st435@srcf.net'
 
+alias socks='echo "starting socks server on port 8080..." && ssh -ND 8080 louis@42nd.org'
+alias vpn='\cd /etc/openvpn && sudo openvpn /etc/openvpn/client.ovpn && \cd -'
+
 #be really lazy
 alias v='vim'
 alias c='cd'
+alias c.='cd ..'
+alias ..='cd ..'
+alias ...='cd ../..'
+alias ....='cd ../../..'
+
 alias l='ls'
 alias ll='ls -l'
 alias la='ls -a'
@@ -93,8 +104,6 @@ alias eth="sudo dhclient eth0"
 PATH=$HOME/bin:/bin:/sbin:/usr/bin:/usr/sbin:/usr/X11R6/bin:/usr/local/bin:/usr/local/sbin:/usr/games:
 # don't put duplicate lines in the history and ignore same sucessive entries.
 HISTCONTROL=ignoreboth
-# flush history to the history file before each command
-PROMPT_COMMAND='history -a'
 EDITOR=vim
 export PATH HOME TERM EDITOR PROMPT_COMMAND HISTCONTROL
 
