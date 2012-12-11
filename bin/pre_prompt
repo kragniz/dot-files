@@ -18,7 +18,11 @@ host = uname()[1]
 git = subprocess.Popen('git_get_branch',
         stdout=subprocess.PIPE).communicate()[0].strip()[1:-1]
 
-gitCommitted = subprocess.Popen(['git', 'diff', '--quiet']).wait() == 0
+gitRepo = len(git) > 1
+if gitRepo:
+    gitCommitted = subprocess.Popen(['git', 'diff', '--quiet']).wait() == 0
+else:
+    gitCommitted = False
 
 rows, columns = subprocess.Popen(['stty', 'size'],
         stdout=subprocess.PIPE).communicate()[0].split()
@@ -29,5 +33,5 @@ print col(37,'┌──[') + col(36, user) + col(37,'@') + \
       col(37, col(37,'/').join([col(94,s) for s in (cwd.split('/')[:-1]+[''])])) + \
       col(96, cwd.split('/')[-1]) + \
       col(37,']') + padding + \
-      col(37,'[') + \
-      col(37 if gitCommitted else 35, git) + col(37,']')
+      (col(37,'[') if gitRepo else '') + \
+      col(37 if gitCommitted else 35, git) + (col(37,']') if gitRepo else '')
