@@ -83,6 +83,11 @@ alias ':q'='exit'
 alias dquilt="dquilt --quiltrc=${HOME}/.quiltrc-dpkg"
 alias update="sudo apt-get update && sudo apt-get dist-upgrade"
 
+inst() {
+    sudo apt-get install $@
+}
+
+
 alias eth="sudo dhclient eth0"
 
 PATH=$HOME/bin:/bin:/sbin:/usr/bin:/usr/sbin:/usr/X11R6/bin:/usr/local/bin:/usr/local/sbin:/usr/games:
