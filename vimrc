@@ -1,3 +1,4 @@
+call pathogen#infect() " Load pathogen
 
 set fileencodings=ucs-bom,utf-8,cp936,big5,euc-jp,euc-kr,gb18030,latin1       
 set tabstop=4       " Number of spaces that a <Tab> in the file counts for.
@@ -71,7 +72,9 @@ set so=4            " Add a scrolloff number of lines above and below the cursor
 set dict=/usr/share/dict/words
 set complete-=k complete+=k
 
-set ofu=syntaxcomplete#Complete
+"set ofu=syntaxcomplete#Complete
+set completeopt=menuone,longest,preview
+
 " 
 "Use TAB to complete when typing words, else inserts TABs as usual.
 "Uses dictionary and source files to find matching words to complete.
@@ -83,6 +86,7 @@ function! Tab_Or_Complete()
   endif
 endfunction
 inoremap <Tab> <C-R>=Tab_Or_Complete()<CR>
+highlight Pmenu ctermfg=grey ctermbg=darkgrey
 
 "set completeopt=longest,menuone
 
