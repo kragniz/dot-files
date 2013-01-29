@@ -1,4 +1,4 @@
-all: ~/.vimrc bash git ~/bin icons tmux X openbox dmenu mpd irc gitflow
+all: ~/.vimrc bash git ~/bin icons tmux X openbox dmenu mpd irc gitflow python
 
 submodules:
 	git submodule init
@@ -71,3 +71,6 @@ initmpd:
 	touch ~/.mpd/mpd.log
 	touch ~/.mpd/mpd.pid
 	touch ~/.mpd/mpdstate
+
+python:
+	cp -a pythonrc ~/.pythonrc.py
