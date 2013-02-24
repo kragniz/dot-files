@@ -15,8 +15,8 @@ shopt -s checkwinsize
 # flush history to the history file before each command and set the prompt
 PROMPT_COMMAND='history -a && ~/bin/pre_prompt'
 
-PS1="\e[00;37m└─\$\e[00m "
-PS2="\e[00;37m└─>\e[00m "
+PS1="\[\e[00;37m\]└─\$ \[\e[0m\]"
+PS2="\[\e[00;37m\]└─> \[\e[0m\]"
 
 # enable color support of ls and also add handy aliases
 if [ "$TERM" != "dumb" ] && [ -x /usr/bin/dircolors ]; then
