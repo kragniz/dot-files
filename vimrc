@@ -60,8 +60,8 @@ set listchars=tab:>.,trail:.,extends:#,nbsp:. " Highlight problematic whitespace
 
 set gdefault        " the /g flag on :s substitutions by default
 
-" set background=dark
-"
+set background=dark
+
 set mouse=a         " Enable the use of the mouse.
 
 set so=4            " Add a scrolloff number of lines above and below the cursor
