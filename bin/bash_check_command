@@ -1,0 +1,20 @@
+#!/usr/bin/env python
+
+import sys
+import re
+from subprocess import call
+
+aliases = {
+        'll+a+': 'ls -l -a --color'
+        }
+
+command_found = False
+for alias, command in aliases.items():
+    if re.match(alias, sys.argv[1]):
+        args = ' '.join(command.split() + sys.argv[2:])
+        call(args, shell=True)
+        command_found = True
+        break
+
+if not command_found:
+    print '{}: Command not found'.format(sys.argv[1])

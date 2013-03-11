@@ -95,13 +95,12 @@ alias dquilt="dquilt --quiltrc=${HOME}/.quiltrc-dpkg"
 alias update="sudo apt-get update && sudo apt-get dist-upgrade"
 
 command_not_found_handle() {
-    echo "Hey, I can't find that program"
+    bash_check_command "$@"
 }
 
 inst() {
     sudo apt-get install $@
 }
-
 
 alias eth="sudo dhclient eth0"
 
