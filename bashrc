@@ -56,7 +56,7 @@ alias devio='ssh lpt@devio.us'
 alias 42nd='ssh louis@42nd.org'
 alias srcf='ssh st435@srcf.net'
 
-alias socks='echo "starting socks server on port 9090..." && ssh -ND 9090 louis@42nd.org'
+alias socks='echo "starting socks server on port 9090..." && ssh -D 9090 -Nf 42nd.org'
 alias vpn='\cd /etc/openvpn && sudo openvpn /etc/openvpn/client.ovpn && \cd -'
 
 #be really lazy
