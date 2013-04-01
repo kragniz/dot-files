@@ -5,7 +5,8 @@ import re
 from subprocess import call
 
 aliases = {
-        'll+a+': 'ls -l -a --color'
+        'll+a+': 'ls -l -a --color',
+        '.*list.*files.*please.': 'ls --color':
         }
 
 command_found = False
