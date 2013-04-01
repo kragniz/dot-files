@@ -116,3 +116,5 @@ set textwidth=79    " Maximum width of text that is being inserted. A longer
  
 highlight OverLength ctermbg=red ctermfg=white
 match OverLength /\%81v.\+/
+
+command Kana set keymap=kana
