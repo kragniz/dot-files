@@ -30,14 +30,6 @@ cd() {
       builtin cd "$@"; ls
   }
 
-mpd() {
-    mpd
-    pidof mpdscribble >& /dev/null
-    if [ $? -ne 0 ]; then
-         mpdscribble &
-    fi
-}
-
 mkc() {
     mkdir "$@" && cd "$@"
 }
