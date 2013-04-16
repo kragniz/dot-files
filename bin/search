@@ -1,0 +1,3 @@
+#!/bin/bash
+export GREP_COLORS='fn=38;5;245:mt=38;5;228'
+grep -rn "$@" --color=auto .

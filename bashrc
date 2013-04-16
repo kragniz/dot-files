@@ -15,8 +15,8 @@ shopt -s checkwinsize
 # flush history to the history file before each command and set the prompt
 PROMPT_COMMAND='history -a && ~/bin/pre_prompt'
 
-PS1="\e[00;37m└─\$\e[00m "
-PS2="\e[00;37m└─>\e[00m "
+PS1="\[\e[00;37m\]└─\$ \[\e[0m\]"
+PS2="\[\e[00;37m\]└─> \[\e[0m\]"
 
 # enable color support of ls and also add handy aliases
 if [ "$TERM" != "dumb" ] && [ -x /usr/bin/dircolors ]; then
@@ -29,14 +29,6 @@ fi
 cd() {
       builtin cd "$@"; ls
   }
-
-mpd() {
-    mpd
-    pidof mpdscribble >& /dev/null
-    if [ $? -ne 0 ]; then
-         mpdscribble &
-    fi
-}
 
 mkc() {
     mkdir "$@" && cd "$@"
@@ -53,10 +45,10 @@ alias pingg='ping google.com'
 
 alias aber='ssh lot15@central.aber.ac.uk'
 alias devio='ssh lpt@devio.us'
-alias 42nd='ssh louis@42nd.org'
+alias 42nd='ssh 42nd.org -t tmux attach'
 alias srcf='ssh st435@srcf.net'
 
-alias socks='echo "starting socks server on port 8080..." && ssh -ND 8080 louis@42nd.org'
+alias socks='echo "starting socks server on port 9090..." && ssh -D 9090 -Nf 42nd.org'
 alias vpn='\cd /etc/openvpn && sudo openvpn /etc/openvpn/client.ovpn && \cd -'
 
 #be really lazy
@@ -79,7 +71,7 @@ alias gp='git push'
 alias gd='git diff'
 alias gc='git commit'
 alias gst='git status'
-alias gl='git log --stat'
+alias gl='git log --stat --graph'
 
 #be super duper lazy
 alias up='vol up'
@@ -94,10 +86,13 @@ alias ':q'='exit'
 alias dquilt="dquilt --quiltrc=${HOME}/.quiltrc-dpkg"
 alias update="sudo apt-get update && sudo apt-get dist-upgrade"
 
+command_not_found_handle() {
+    bash_check_command "$@"
+}
+
 inst() {
     sudo apt-get install $@
 }
-
 
 alias eth="sudo dhclient eth0"
 

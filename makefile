@@ -74,3 +74,6 @@ initmpd:
 
 python:
 	cp -a pythonrc ~/.pythonrc.py
+
+ratpoison:
+	cp -a ratpoisonrc ~/.ratpoisonrc

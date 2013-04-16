@@ -39,10 +39,7 @@ set backspace=2     " Influences the working of <BS>, <Del>, CTRL-W
 set autoindent      " Copy indent from current line when starting a new line
                     " (typing <CR> in Insert mode or when using the "o" or "O"
                     " command).function! Chomp(str)
- 
-set textwidth=79    " Maximum width of text that is being inserted. A longer
-                    " line will be broken after white space to get this width.
- 
+                    "
 set formatoptions=c,q,r,t " This is a sequence of letters which describes how
                         " automatic formatting is to be done.
                         "
@@ -63,8 +60,8 @@ set listchars=tab:>.,trail:.,extends:#,nbsp:. " Highlight problematic whitespace
 
 set gdefault        " the /g flag on :s substitutions by default
 
-" set background=dark
-"
+set background=dark
+
 set mouse=a         " Enable the use of the mouse.
 
 set so=4            " Add a scrolloff number of lines above and below the cursor
@@ -112,3 +109,12 @@ endfunction
 " use ctrl-f to open file in current buffer
 map <c-t> :call DmenuOpen("tabe")<cr>
 map <c-f> :call DmenuOpen("e")<cr>
+
+
+set textwidth=79    " Maximum width of text that is being inserted. A longer
+                    " line will be broken after white space to get this width.
+ 
+highlight OverLength ctermbg=red ctermfg=white
+match OverLength /\%81v.\+/
+
+command Kana set keymap=kana

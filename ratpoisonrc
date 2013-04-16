@@ -1,0 +1,2 @@
+exec rpws -i
+exec /usr/bin/rpws init 6 -k
