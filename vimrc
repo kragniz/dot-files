@@ -36,7 +36,8 @@ set complete-=k complete+=k
 "set ofu=syntaxcomplete#Complete
 set completeopt=menuone,longest,preview
 
-" 
+autocmd BufNewFile,BufReadPost *.ino,*.pde set filetype=cpp
+
 "Use TAB to complete when typing words, else inserts TABs as usual.
 "Uses dictionary and source files to find matching words to complete.
 function! Tab_Or_Complete()
