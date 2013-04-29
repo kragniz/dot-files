@@ -39,6 +39,7 @@ alias vi='vim'
 alias sp='aspell -c'
 
 alias music='mpg123 -ZvC --title --list ~/playlist'
+alias qw='chromium' #pls. qw is pretty easy to type
 
 #check your internet connection
 alias pingg='ping google.com'
