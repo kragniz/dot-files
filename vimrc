@@ -30,6 +30,10 @@ set background=dark
 set mouse=a
 set so=4            " Add a scrolloff number of lines above and below the cursor
 
+" Highlight current word
+highlight flicker cterm=bold ctermfg=white
+au CursorMoved <buffer> exe 'match flicker /\V\<'.escape(expand('<cword>'), '/').'\>/'
+
 set dict=/usr/share/dict/words
 set complete-=k complete+=k
 
