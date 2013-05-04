@@ -36,6 +36,7 @@ mkc() {
 
 alias editor='vim'
 alias vi='vim'
+alias v='vim'
 alias sp='aspell -c'
 
 alias music='mpg123 -ZvC --title --list ~/playlist'
@@ -53,7 +54,7 @@ alias socks='echo "starting socks server on port 9090..." && ssh -D 9090 -Nf 42n
 alias vpn='\cd /etc/openvpn && sudo openvpn /etc/openvpn/client.ovpn && \cd -'
 
 #be really lazy
-alias v='vim'
+alias 'cp'='cp -v'
 alias c='cd'
 alias c.='cd ..'
 alias ..='cd ..'
