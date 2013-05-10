@@ -38,9 +38,10 @@ alias editor='vim'
 alias vi='vim'
 alias v='vim'
 alias sp='aspell -c'
-
 alias music='mpg123 -ZvC --title --list ~/playlist'
 alias qw='chromium' #pls. qw is pretty easy to type
+alias p='python'
+alias py='python'
 
 #check your internet connection
 alias pingg='ping google.com'
