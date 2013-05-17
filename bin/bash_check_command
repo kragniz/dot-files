@@ -10,7 +10,7 @@ aliases = {
         }
 
 filetypes = {
-        '+\.html': 'chromium-browser'
+        '.+\.html': 'chromium-browser'
         }
 
 command_found = False
