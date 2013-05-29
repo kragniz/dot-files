@@ -45,8 +45,3 @@ URxvt*scrollTtyKeypress: True
 URxvt*secondaryScroll: True
 URxvt*saveLines: 8000
 URxvt*scrollBar: False
-!URxvt.perl-ext-common : tabbed
-!URxvt.tabbed.tabbar-fg: 5
-!URxvt.tabbed.tabbar-bg: 0
-!URxvt.tabbed.tab-fg:    14
-!URxvt.tabbed.tab-bg:    0
