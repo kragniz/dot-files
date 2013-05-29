@@ -30,13 +30,17 @@
 *color7:#e9e9e9
 *color15:#fdfdfd
 
-URxvt*background: #2d2d2d
+URxvt*background: rgba:0000/0000/0200/d800
 URxvt*foreground: #b5b5b5
 URxvt*depth: 32
-URxvt*background: rgba:0000/0000/0200/d800
 ! fonts
 ! run "fc-list" for a list of available fonts
 URxvt*font: xft:Terminus:pixelsize=9
+
+Urxvt*perl-lib:    /usr/lib/urxvt/perl/
+URxvt.perl-ext-common: tabbed,default,matcher
+URxvt.url-launcher: chromium-browser
+URxvt.matcher.button: 1
 
 URxvt*termName: xterm
 
@@ -45,8 +49,7 @@ URxvt*scrollTtyKeypress: True
 URxvt*secondaryScroll: True
 URxvt*saveLines: 8000
 URxvt*scrollBar: False
-!URxvt.perl-ext-common : tabbed
-!URxvt.tabbed.tabbar-fg: 5
-!URxvt.tabbed.tabbar-bg: 0
-!URxvt.tabbed.tab-fg:    14
-!URxvt.tabbed.tab-bg:    0
+URxvt.tabbed.tabbar-fg: 5
+URxvt.tabbed.tabbar-bg: 0
+URxvt.tabbed.tab-fg:    14
+URxvt.tabbed.tab-bg:    0
