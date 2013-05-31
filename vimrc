@@ -83,7 +83,7 @@ function! DoPrettyXML()
 endfunction
 command! PrettyXML call DoPrettyXML()
 
-"set completeopt=longest,menuone
+set rtp+=$GOROOT/misc/vim
 
 filetype plugin indent on
 syntax on
