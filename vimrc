@@ -8,6 +8,7 @@ set expandtab
 set smarttab
 set showcmd
 set number          " Show line numbers.
+set relativenumber
 set showmatch
 set hlsearch
  
