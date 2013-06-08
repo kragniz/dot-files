@@ -71,12 +71,7 @@ alias g='git'
 alias gt='git'
 alias gd='git diff'
 alias gll='git log --stat --graph'
-alias gl='git log --graph --all --abbrev-commit --pretty=format:'\''%C(red)%d%x20%C(yellow)%h%x20%C(green)%an%x20 %Creset%s %Cred(%cr)'\''
-
-#be super duper lazy
-alias up='vol up'
-alias down='vol down'
-alias mute='vol mute'
+alias gl='git log --graph --all --abbrev-commit --pretty=format:'\''%C(red)%d%x20%C(yellow)%h%x20%C(green)%an%x20 %Creset%s %Cred(%cr)'\'
 
 #pretend I'm in vi
 alias ':x'='exit'
