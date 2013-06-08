@@ -69,12 +69,9 @@ alias lla='ls -la'
 
 alias g='git'
 alias gt='git'
-alias gaa='git add -A'
-alias gp='git push'
 alias gd='git diff'
-alias gc='git commit'
-alias gst='git status'
-alias gl='git log --stat --graph'
+alias gll='git log --stat --graph'
+alias gl='git log --graph --all --abbrev-commit --pretty=format:'\''%C(red)%d%x20%C(yellow)%h%x20%C(green)%an%x20 %Creset%s %Cred(%cr)'\''
 
 #be super duper lazy
 alias up='vol up'
