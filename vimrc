@@ -117,3 +117,8 @@ highlight OverLength ctermbg=red ctermfg=white
 match OverLength /\%81v.\+/
 
 command Kana set keymap=kana
+
+function! Notes()
+    split $HOME/.notes/notes
+endfunction
+map <C-n> :call Notes()<CR>
