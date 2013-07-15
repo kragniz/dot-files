@@ -12,15 +12,16 @@ bash:
 	cp -a inputrc ~/.inputrc
 	cp -a bash_profile ~/.bash_profile
 
-~/.vimrc: vimrc vim jedi
+~/.vimrc: vimrc vim complete
 	cp -a vimrc ~/.vimrc
 	cp -rfavT vim ~/.vim
 
-jedi:
-	git clone https://github.com/davidhalter/jedi.git
-	cd jedi; python setup.py install --user
+complete:
 	mkdir -p vim/bundle
-	cd vim/bundle; rm -rfv jedi-vim; git clone https://github.com/davidhalter/jedi-vim.git
+	cd vim/bundle; rm -rfv YouCompleteMe; git clone https://github.com/Valloric/YouCompleteMe.git
+	git submodule init
+	git submodule update --init --recursive
+	cd vim/bundle/YouCompleteMe; ./install.sh
 
 git:
 	cp -a gitconfig ~/.gitconfig
@@ -36,7 +37,7 @@ gitflow:
 irc:
 	mkdir -p ~/.irssi/scripts/autorun
 	cp -arv irssi/autorun ~/.irssi/scripts
-	cp irssi/startup ~.irssi
+	cp irssi/startup ~.irssI
 	
 icons:
 	mkdir -p ~/.icons/gnome/24x24/places/
