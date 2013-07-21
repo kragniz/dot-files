@@ -49,6 +49,7 @@ alias pingg='ping google.com'
 alias aber='ssh lot15@central.aber.ac.uk'
 alias devio='ssh lpt@devio.us'
 alias 42nd='ssh 42nd.org -t tmux attach'
+alias nyaa='ssh nyaa.kragniz.eu -t tmux attach'
 alias srcf='ssh st435@srcf.net'
 
 alias socks='echo "starting socks server on port 9090..." && ssh -D 9090 -Nf 42nd.org'
