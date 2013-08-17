@@ -43,6 +43,11 @@ alias qw='chromium' #pls. qw is pretty easy to type
 alias p='python'
 alias pi='ipython'
 
+# wrap sbcl with readline
+if rlwrap --version 2>&1 >/dev/null ; then
+    alias sbcl='rlwrap sbcl'
+fi
+
 #check your internet connection
 alias pingg='ping google.com'
 
