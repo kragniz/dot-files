@@ -7,21 +7,19 @@ set shiftwidth=4    " Number of spaces to use for each step of (auto)indent.
 set expandtab
 set smarttab
 set showcmd
-set number          " Show line numbers.
+set number
 set relativenumber
 set showmatch
 set hlsearch
- 
-set incsearch       " While typing a search command, show immediately where the
-                    " so far typed pattern matches.
+
+set incsearch
 set ignorecase
-set smartcase       " Override the 'ignorecase' option if the search pattern
-                    " contains upper case characters.
+set smartcase
 set backspace=2
- 
-set autoindent      " Copy indent from current line when starting a new line
-                    " (typing <CR> in Insert mode or when using the "o" or "O"
-                    " command).function! Chomp(str)
+set autoindent
+
+" (typing <CR> in Insert mode or when using the "o" or "O"
+" command).function! Chomp(str)
 set formatoptions=c,q,r,t
 set ruler
 set listchars=tab:>.,trail:.,extends:#,nbsp:. " Highlight problematic whitespace
@@ -29,7 +27,9 @@ set listchars=tab:>.,trail:.,extends:#,nbsp:. " Highlight problematic whitespace
 set gdefault        " the /g flag on :s substitutions by default
 set background=dark
 set mouse=a
-set so=4            " Add a scrolloff number of lines above and below the cursor
+set so=4
+
+set textwidth=79    " Maximum width of text that is being inserted.
 
 " Highlight current word
 highlight flicker cterm=bold ctermfg=white
@@ -46,11 +46,11 @@ autocmd BufNewFile,BufReadPost *.ino,*.pde set filetype=cpp
 "Use TAB to complete when typing words, else inserts TABs as usual.
 "Uses dictionary and source files to find matching words to complete.
 function! Tab_Or_Complete()
-  if col('.')>1 && strpart( getline('.'), col('.')-2, 3 ) =~ '^\w'
-    return "\<C-N>"
-  else
-    return "\<Tab>"
-  endif
+    if col('.')>1 && strpart( getline('.'), col('.')-2, 3 ) =~ '^\w'
+        return "\<C-N>"
+    else
+        return "\<Tab>"
+    endif
 endfunction
 inoremap <Tab> <C-R>=Tab_Or_Complete()<CR>
 highlight Pmenu ctermfg=grey ctermbg=darkgrey
@@ -64,15 +64,15 @@ syntax on
 ca w!! w !sudo tee >/dev/null "%"
 
 function! Chomp(str)
-  return substitute(a:str, '\n$', '', '')
+    return substitute(a:str, '\n$', '', '')
 endfunction
 
 function! DmenuOpen(cmd)
-  let fname = Chomp(system("gitfilepicker"))
-  if empty(fname)
-    return
-  endif
-  execute a:cmd . " " . fname
+    let fname = Chomp(system("gitfilepicker"))
+    if empty(fname)
+        return
+    endif
+    execute a:cmd . " " . fname
 endfunction
 
 " use ctrl-t to open file in a new tab
@@ -80,16 +80,12 @@ endfunction
 map <c-t> :call DmenuOpen("tabe")<cr>
 map <c-f> :call DmenuOpen("e")<cr>
 
-
-set textwidth=79    " Maximum width of text that is being inserted. A longer
-                    " line will be broken after white space to get this width.
- 
 highlight OverLength ctermbg=red ctermfg=white
 match OverLength /\%81v.\+/
 
 command Kana set keymap=kana
 
 function! Notes()
-    split $HOME/.notes/notes
+    split $HOME/.hyoki/notes
 endfunction
 map <C-n> :call Notes()<CR>
