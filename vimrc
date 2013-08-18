@@ -31,6 +31,14 @@ set so=4
 
 set textwidth=79    " Maximum width of text that is being inserted.
 
+filetype plugin indent on
+syntax on
+
+" don't expand tabs in go files
+au BufRead,BufNewFile *.go set noexpandtab
+
+autocmd BufNewFile,BufReadPost *.ino,*.pde set filetype=cpp
+
 " Highlight current word
 highlight flicker cterm=bold ctermfg=white
 au CursorMoved <buffer> exe 'match flicker /\V\<'.escape(expand('<cword>'), '/').'\>/'
@@ -40,8 +48,6 @@ set complete-=k complete+=k
 
 "set ofu=syntaxcomplete#Complete
 set completeopt=menuone,longest,preview
-
-autocmd BufNewFile,BufReadPost *.ino,*.pde set filetype=cpp
 
 "Use TAB to complete when typing words, else inserts TABs as usual.
 "Uses dictionary and source files to find matching words to complete.
@@ -56,9 +62,6 @@ inoremap <Tab> <C-R>=Tab_Or_Complete()<CR>
 highlight Pmenu ctermfg=grey ctermbg=darkgrey
 
 set rtp+=$GOROOT/misc/vim
-
-filetype plugin indent on
-syntax on
 
 "save a file as root. Use :w!! and vim will ask you for your password
 ca w!! w !sudo tee >/dev/null "%"
