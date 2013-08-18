@@ -36,6 +36,8 @@ syntax on
 
 " don't expand tabs in go files
 au BufRead,BufNewFile *.go set noexpandtab
+" Fmt go files on every save
+autocmd FileType go autocmd BufWritePre <buffer> Fmt
 
 autocmd BufNewFile,BufReadPost *.ino,*.pde set filetype=cpp
 
