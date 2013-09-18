@@ -38,7 +38,7 @@ URxvt*depth: 32
 URxvt*font: xft:Terminus:pixelsize=9
 
 Urxvt*perl-lib:    /usr/lib/urxvt/perl/
-URxvt.perl-ext-common: tabbed,default,matcher
+URxvt.perl-ext-common: tabbed,default,matcher,clipboard
 URxvt.url-launcher: chromium-browser
 URxvt.matcher.button: 1
 
@@ -53,3 +53,4 @@ URxvt.tabbed.tabbar-fg: 5
 URxvt.tabbed.tabbar-bg: 0
 URxvt.tabbed.tab-fg:    14
 URxvt.tabbed.tab-bg:    0
+URxvt.clipboard.autocopy: True
