@@ -15,14 +15,7 @@ set -g status-fg white
 # window status
 setw -g window-status-format "#[bg=green]#[fg=colour0] #I #[fg=brightgreen]#[bg=black] #W "
 setw -g window-status-current-format "#[bg=brightyellow]#[fg=black] #I #[fg=colour11]#[bg=red] #W "
-setw -g window-status-current-bg colour0
-setw -g window-status-current-fg colour11
 setw -g window-status-current-attr dim
-setw -g window-status-bg green
-setw -g window-status-fg black
-setw -g window-status-attr dim
-setw -g window-status-content-bg colour0
-setw -g window-status-content-fg colour11
 setw -g window-status-content-attr blink
 
 set -g status-interval 2
@@ -40,3 +33,7 @@ bind R source-file ~/.tmux.conf \; display-message "Config reloaded..."
 
 # Stop people annoying me by connecting with a tiny terminal
 setw -g aggressive-resize on
+
+# Start windows and panes at 1, not 0
+set -g base-index 1
+set -g pane-base-index 1
