@@ -1,0 +1,7 @@
+#!/bin/sh
+
+(ssh user@server -o PermitLocalCommand=no  \
+  ": > .irssi/fnotify ; tail -f .irssi/fnotify " |  \
+while read heading message; do                      \
+  notify-send "${heading}" "${message}";      \
+done)&
