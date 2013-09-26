@@ -1,4 +1,4 @@
-all: ~/.vimrc bash git ~/bin icons tmux X openbox dmenu mpd irc gitflow python
+all: ~/.vimrc bash git ~/bin icons tmux.conf X openbox dmenu mpd irc gitflow python
 
 submodules:
 	git submodule init
@@ -45,7 +45,7 @@ icons:
 debian:
 	cp -a quiltrc-dpkg ~/.quiltrc-dpkg
 
-tmux:
+tmux.conf:
 	cp -a tmux ~/.tmux.conf
 
 X:
