@@ -46,7 +46,7 @@ debian:
 	cp -a quiltrc-dpkg ~/.quiltrc-dpkg
 
 tmux:
-	cp -a tmux.conf ~/.tmux.conf
+	cp -a tmux ~/.tmux.conf
 
 X:
 	cp -a Xdefaults ~/.Xdefaults
