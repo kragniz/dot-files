@@ -13,7 +13,7 @@ def col(n, s):
 
 cwd = _.get('PWD').replace(_.get('HOME'), '~')
 user = _.get('USER')
-tmux = len(_.get('TMUX')) > 1
+tmux = (_.get('TMUX')) is not None
 host = uname()[1]
 
 git = subprocess.Popen('git_get_branch',
@@ -29,7 +29,7 @@ rows, columns = subprocess.Popen(['stty', 'size'],
         stdout=subprocess.PIPE).communicate()[0].split()
 
 padding = (int(columns) - (len(git)+len(cwd)+len(user)+len(host)+ 12)) * ' '
-print col(37,'┌──[') + col(36, user) + \
+print col(37,'┌──[') + col(34, user) + \
       (( col(37,'@') + col(34, host)) if not tmux else "") + \
       col(37,']──[') + \
       col(37, col(37,'/').join([col(94,s) for s in (cwd.split('/')[:-1]+[''])])) + \
