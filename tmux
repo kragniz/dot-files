@@ -4,6 +4,10 @@ setw -g mouse-select-pane on
 setw -g mouse-select-window on
 set -g mouse-resize-pane on
 
+bind -n C-j new-window
+bind -n C-h prev
+bind -n C-l next
+
 # clock colors
 set-window-option -g clock-mode-style 12
 set-window-option -g clock-mode-colour "#ff8000"
