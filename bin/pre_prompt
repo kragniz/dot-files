@@ -6,10 +6,10 @@ from os import uname
 import subprocess
 
 __end = '\033[0m'
-__col = '\033[%sm'
+__col = '\033[%s%sm'
 
-def col(n, s):
-    return __col % n + s + __end
+def col(n, s, blink=False):
+    return __col % (n, ';5' if blink else '') + s + __end
 
 cwd = _.get('PWD').replace(_.get('HOME'), '~')
 user = _.get('USER')
@@ -25,15 +25,10 @@ if gitRepo:
 else:
     gitCommitted = False
 
-rows, columns = subprocess.Popen(['stty', 'size'],
-        stdout=subprocess.PIPE).communicate()[0].split()
-
-padding = (int(columns) - (len(git)+len(cwd)+len(user)+len(host)+ 12)) * ' '
-print col(37,'┌──[') + col(34, user) + \
-      (( col(37,'@') + col(34, host)) if not tmux else "") + \
-      col(37,']──[') + \
+print col(37,'┌─[') + col(34, user) + \
+      (( col(37,'@') + col(34, host)) if not tmux else '') + \
+      col(37,']─[') + \
       col(37, col(37,'/').join([col(94,s) for s in (cwd.split('/')[:-1]+[''])])) + \
       col(96, cwd.split('/')[-1]) + \
-      col(37,']') + padding + \
-      (col(37,'[') if gitRepo else '') + \
-      col(37 if gitCommitted else 35, git) + (col(37,']') if gitRepo else '')
+      col(37,']') + (col(37,'─[') if gitRepo else '') + \
+      col(37 if gitCommitted else 35, git, blink=not gitCommitted) + (col(37,']') if gitRepo else '')
