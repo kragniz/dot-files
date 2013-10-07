@@ -22,6 +22,8 @@ git = subprocess.Popen('git_get_branch',
 gitRepo = len(git) > 1
 if gitRepo:
     gitCommitted = subprocess.Popen(['git', 'diff', '--quiet']).wait() == 0
+    if git == 'master':
+        git = '•'
 else:
     gitCommitted = False
 
