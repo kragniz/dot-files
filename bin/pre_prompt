@@ -35,6 +35,7 @@ print col(37,'┌─['),
 print user_at_host(),
 print col(37,']─['),
 print col(37, col(37,'/').join([col(94,s) for s in (cwd.split('/')[:-1]+[''])])) + \
-      col(96, cwd.split('/')[-1]) + \
-      col(37,']') + (col(37,'─[') if gitRepo else '') + \
+      col(96, cwd.split('/')[-1]),
+
+print col(37,']') + (col(37,'─[') if gitRepo else '') + \
       col(37 if gitCommitted else 35, git, blink=not gitCommitted) + (col(37,']') if gitRepo else '')
