@@ -34,12 +34,9 @@ PROMPT_COMMAND='history -a && ~/bin/pre_prompt'
 PS1="\[\e[00;37m\]└─\$ \[\e[0m\]"
 PS2="\[\e[00;37m\]└─> \[\e[0m\]"
 
-# enable color support of ls and also add handy aliases
-if [ "$TERM" != "dumb" ] && [ -x /usr/bin/dircolors ]; then
-    eval "`dircolors -b`"
-    alias ls='ls --color=auto'
-    alias grep='egrep --color=auto'
-fi
+eval "`dircolors -b`"
+alias ls='ls --color=auto --group-directories-first'
+alias grep='egrep --color=auto'
 
 # ls whenever cding to a directory
 cd() {
