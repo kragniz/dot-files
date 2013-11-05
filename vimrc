@@ -31,6 +31,9 @@ set so=4
 
 set textwidth=79    " Maximum width of text that is being inserted.
 
+setlocal spell spelllang=en
+nmap ss :set spell!<CR>
+
 filetype plugin indent on
 syntax on
 
