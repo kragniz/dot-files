@@ -41,3 +41,6 @@ setw -g aggressive-resize on
 # Start windows and panes at 1, not 0
 set -g base-index 1
 set -g pane-base-index 1
+
+# A longer scrollback
+set -g history-limit 10000
