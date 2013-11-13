@@ -52,6 +52,8 @@ autocmd BufRead,BufNewFile *.md set filetype=markdown
 highlight flicker cterm=bold ctermfg=white
 au CursorMoved <buffer> exe 'match flicker /\V\<'.escape(expand('<cword>'), '/').'\>/'
 
+map // :noh<CR><c-l>
+
 " use C-j and C-k to move lines up and down in:
 " normal mode
 nnoremap <C-j> :m .+1<CR>==
