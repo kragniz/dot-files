@@ -37,10 +37,6 @@ irc:
 	mkdir -p ~/.irssi/scripts/autorun
 	cp -arv irssi/autorun ~/.irssi/scripts
 	cp irssi/startup ~.irssi
-	
-icons:
-	mkdir -p ~/.icons/gnome/24x24/places/
-	cp start-here.svg ~/.icons/gnome/24x24/places
 
 debian:
 	cp -a quiltrc-dpkg ~/.quiltrc-dpkg
