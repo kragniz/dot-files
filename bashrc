@@ -56,6 +56,9 @@ alias qw='chromium' #pls. qw is pretty easy to type
 alias p='python'
 alias pi='ipython'
 
+alias tma='tmux attach -d -t'
+alias git-tmux='tmux new -s $(basename $(pwd))'
+
 #check your internet connection
 alias pingg='ping google.com'
 
@@ -69,7 +72,7 @@ alias socks='echo "starting socks server on port 9090..." && ssh -D 9090 -Nf 42n
 alias vpn='\cd /etc/openvpn && sudo openvpn /etc/openvpn/client.ovpn && \cd -'
 
 #be really lazy
-alias 'cp'='cp -v'
+alias cp='cp -v'
 alias c='cd'
 alias c.='cd ..'
 alias ..='cd ..'
