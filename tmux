@@ -8,6 +8,12 @@ bind -n C-j new-window
 bind -n C-h prev
 bind -n C-l next
 
+set-window-option -g mode-keys vi
+bind h select-pane -L
+bind j select-pane -D
+bind k select-pane -U
+bind l select-pane -R
+
 # clock colors
 set-window-option -g clock-mode-style 12
 set-window-option -g clock-mode-colour "#ff8000"
