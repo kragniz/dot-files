@@ -57,7 +57,7 @@ alias p='python'
 alias pi='ipython'
 
 alias tma='tmux attach -d -t'
-alias git-tmux='tmux new -s $(basename $(pwd))'
+alias tmux_='tmux new -s $(basename $(pwd))'
 
 #check your internet connection
 alias pingg='ping google.com'
