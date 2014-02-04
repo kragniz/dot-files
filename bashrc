@@ -109,11 +109,13 @@ inst() {
 
 alias eth="sudo dhclient eth0"
 
-PATH=$HOME/bin:/bin:/sbin:/usr/bin:/usr/sbin:/usr/X11R6/bin:/usr/local/bin:/usr/local/sbin:/usr/games:
+GOPATH=$HOME/go
+
+PATH=$HOME/bin:$GOPATH/bin:/bin:/sbin:/usr/bin:/usr/sbin:/usr/X11R6/bin:/usr/local/bin:/usr/local/sbin:/usr/games:
 # don't put duplicate lines in the history and ignore same sucessive entries.
 HISTCONTROL=ignoreboth
 EDITOR=vim
-export PATH HOME TERM EDITOR PROMPT_COMMAND HISTCONTROL
+export PATH GOPATH HOME TERM EDITOR PROMPT_COMMAND HISTCONTROL
 
 GPGKEY=E13E7098
 DEBEMAIL="kragniz@gmail.com"
