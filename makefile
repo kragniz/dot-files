@@ -60,17 +60,7 @@ mpd:
 	mkdir -p ~/.mpdscribble
 	cp mpdscribble ~/.mpdscribble/mpdscribble.conf
 
-initmpd:
-	mkdir -p ~/.mpd/playlists
-	touch ~/.mpd/mpd.db
-	touch ~/.mpd/mpd.log
-	touch ~/.mpd/mpd.pid
-	touch ~/.mpd/mpdstate
-
 python:
 	cp -a pythonrc ~/.pythonrc.py
 	mkdir -p ~/.config/ipython/profile_default
 	cp -a ipython ~/.config/ipython/profile_default/ipython_config.py
-
-ratpoison:
-	cp -a ratpoisonrc ~/.ratpoisonrc
