@@ -29,7 +29,7 @@ shopt -s autocd
 [ -x /usr/bin/lesspipe ] && eval "$(lesspipe)"
 
 # flush history to the history file before each command and set the prompt
-PROMPT_COMMAND='history -a && ~/bin/pre_prompt'
+PROMPT_COMMAND='history -a'
 
 PS1="\[\e[00;37m\]└─\$ \[\e[0m\]"
 PS2="\[\e[00;37m\]└─> \[\e[0m\]"
