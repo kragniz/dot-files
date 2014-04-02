@@ -25,7 +25,7 @@ set ruler
 set listchars=tab:>.,trail:.,extends:#,nbsp:. " Highlight problematic whitespace
 
 set gdefault        " the /g flag on :s substitutions by default
-set background=dark
+set background=light
 set mouse=a
 set so=4
 
