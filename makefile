@@ -7,10 +7,19 @@ submodules:
 gnupg: submodules
 	cp -rav gnupg ~/.gnupg
 
-bash:
-	cp -a bashrc ~/.bashrc
-	cp -a inputrc ~/.inputrc
-	cp -a bash_profile ~/.bash_profile
+bash: ~/.bashrc ~/.bash_profile ~/.inputrc
+
+~/.bashrc: bashrc
+	cp -a $? $@
+
+~/.bash_profile: bash_profile
+	cp -a $? $@
+
+~/.bash_prompt: bash_prompt
+	cp -a $? $@
+
+~/.inputrc: inputrc
+	cp -a $? $@
 
 ~/.vimrc: vimrc vim jedi
 	cp -a vimrc ~/.vimrc
