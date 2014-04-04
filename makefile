@@ -7,7 +7,7 @@ submodules:
 gnupg: submodules
 	cp -rav gnupg ~/.gnupg
 
-bash: ~/.bashrc ~/.bash_profile ~/.inputrc
+bash: ~/.bashrc ~/.bash_profile ~/.inputrc ~/.bash_prompt
 
 ~/.bashrc: bashrc
 	cp -a $? $@
