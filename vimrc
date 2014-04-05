@@ -9,6 +9,7 @@ set smarttab
 set showcmd
 set number
 set relativenumber
+set list " show whitespace
 set showmatch
 set hlsearch
 
