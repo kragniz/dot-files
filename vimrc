@@ -1,23 +1,28 @@
 call pathogen#infect() " Load pathogen
 
+let g:syntastic_mode_map = { 'mode': 'active', 'active_filetypes': [],'passive_filetypes': ['python'] }
+nnoremap <C-w>E :SyntasticCheck<CR> :SyntasticToggleMode<CR>
+
 set fileencodings=ucs-bom,utf-8,cp936,big5,euc-jp,euc-kr,gb18030,latin1       
 set tabstop=4       " Number of spaces that a <Tab> in the file counts for.
 set shiftwidth=4    " Number of spaces to use for each step of (auto)indent.
+set textwidth=79    " Maximum width of text that is being inserted.
 
 set expandtab
 set smarttab
-set showcmd
-set number
-set relativenumber
 set list " show whitespace
+set showcmd
+set relativenumber
 set showmatch
+set lazyredraw " don't redraw during macros
 set hlsearch
-
 set incsearch
 set ignorecase
 set smartcase
 set backspace=2
 set autoindent
+set laststatus=2 " always show the status bar
+set wildmenu " display a menu of filenames
 
 " (typing <CR> in Insert mode or when using the "o" or "O"
 " command).function! Chomp(str)
@@ -29,8 +34,6 @@ set gdefault        " the /g flag on :s substitutions by default
 set background=light
 set mouse=a
 set so=4
-
-set textwidth=79    " Maximum width of text that is being inserted.
 
 setlocal spell spelllang=en
 nmap ss :set spell!<CR>
@@ -54,6 +57,11 @@ highlight flicker cterm=bold ctermfg=white
 au CursorMoved <buffer> exe 'match flicker /\V\<'.escape(expand('<cword>'), '/').'\>/'
 
 map // :noh<CR><c-l>
+
+" keys to switch tabs quickly
+nnoremap <leader>l :tabprevious<CR>
+nnoremap <leader>h :tabnext<CR>
+nnoremap <leader>n :tabnew<CR>
 
 " use C-j and C-k to move lines up and down in:
 " normal mode
@@ -117,3 +125,5 @@ function! Notes()
     split $HOME/.hyoki/notes
 endfunction
 map <C-n> :call Notes()<CR>
+
+highlight clear SignColumn
