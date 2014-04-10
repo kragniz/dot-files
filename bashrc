@@ -57,6 +57,7 @@ alias music='mpg123 -ZvC --title --list ~/playlist'
 alias qw='chromium' #pls. qw is pretty easy to type
 alias p='python'
 alias pi='ipython'
+alias please='sudo !!'
 
 alias tma='tmux attach -d -t'
 alias tmux_='tmux new -s $(basename $(pwd))'
