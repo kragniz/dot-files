@@ -25,11 +25,6 @@ bash: ~/.bashrc ~/.bash_profile ~/.inputrc ~/.bash_prompt
 	cp -a vimrc ~/.vimrc
 	cp -rfavT vim ~/.vim
 
-jedi:
-	git clone https://github.com/davidhalter/jedi.git
-	cd jedi; python setup.py install --user
-	mkdir -p vim/bundle
-	cd vim/bundle; rm -rfv jedi-vim; git clone https://github.com/davidhalter/jedi-vim.git
 
 git:
 	cp -a gitconfig ~/.gitconfig

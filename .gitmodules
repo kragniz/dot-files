@@ -1,3 +1,0 @@
-[submodule "gnupg"]
-	path = gnupg
-	url = git@github.com:kragniz/gpg-files.git
