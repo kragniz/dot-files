@@ -1,11 +1,7 @@
 all: ~/.vimrc bash git ~/bin tmux.conf X openbox dmenu mpd irc gitflow python
 
-submodules:
-	git submodule init
-	git submodule update
-
-gnupg: submodules
-	cp -rav gnupg ~/.gnupg
+debian:
+	sudo apt-get install vim-nox tmux
 
 bash: ~/.bashrc ~/.bash_profile ~/.inputrc ~/.bash_prompt
 
@@ -21,10 +17,13 @@ bash: ~/.bashrc ~/.bash_profile ~/.inputrc ~/.bash_prompt
 ~/.inputrc: inputrc
 	cp -a $? $@
 
-~/.vimrc: vimrc vim jedi
+~/.vimrc: vimrc vim vim/bundle/vundle
 	cp -a vimrc ~/.vimrc
 	cp -rfavT vim ~/.vim
 
+vim/bundle/vundle:
+	git clone https://github.com/gmarik/vundle.git vim/bundle/vundle
+	vim +PluginInstall +qall
 
 git:
 	cp -a gitconfig ~/.gitconfig
@@ -41,9 +40,6 @@ irc:
 	mkdir -p ~/.irssi/scripts/autorun
 	cp -arv irssi/autorun ~/.irssi/scripts
 	cp irssi/startup ~.irssi
-
-debian:
-	cp -a quiltrc-dpkg ~/.quiltrc-dpkg
 
 tmux.conf:
 	cp -a tmux ~/.tmux.conf
