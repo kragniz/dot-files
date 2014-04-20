@@ -7,6 +7,13 @@ call vundle#rc()
 
 " vundle plugins
 Plugin 'gmarik/vundle'
+Plugin 'itchyny/lightline.vim'
+Plugin 'airblade/vim-gitgutter'
+Plugin 'scrooloose/syntastic'
+
+Plugin 'python.vim'
+Plugin 'python_match.vim'
+Plugin 'pythoncomplete'
 
 filetype plugin indent on
 
