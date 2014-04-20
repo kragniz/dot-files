@@ -1,4 +1,14 @@
-call pathogen#infect() " Load pathogen
+set nocompatible
+filetype off
+
+" set up vundle
+set rtp+=~/.vim/bundle/vundle/
+call vundle#rc()
+
+" vundle plugins
+Plugin 'gmarik/vundle'
+
+filetype plugin indent on
 
 let g:syntastic_mode_map = { 'mode': 'active', 'active_filetypes': [],'passive_filetypes': ['python'] }
 nnoremap <C-w>E :SyntasticCheck<CR> :SyntasticToggleMode<CR>
