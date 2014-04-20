@@ -20,10 +20,10 @@ bash: ~/.bashrc ~/.bash_profile ~/.inputrc ~/.bash_prompt
 ~/.vimrc: vimrc vim vim/bundle/vundle
 	cp -a vimrc ~/.vimrc
 	cp -rfavT vim ~/.vim
+	vim +PluginInstall +qall
 
 vim/bundle/vundle:
 	git clone https://github.com/gmarik/vundle.git vim/bundle/vundle
-	vim +PluginInstall +qall
 
 git:
 	cp -a gitconfig ~/.gitconfig
