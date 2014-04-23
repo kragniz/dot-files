@@ -46,7 +46,13 @@ cd() {
   }
 
 mkc() {
+    # make dir and enter it
     mkdir "$@" && cd "$@"
+}
+
+mkr() {
+    # make repo
+    mkdir "$@" && cd "$@" && git init
 }
 
 alias editor='vim'
