@@ -32,7 +32,7 @@ set -g status-interval 2
 
 # Info on right
 set -g status-right-length 30
-set -g status-right '#[fg=colour11]#[bg=cyan] %Y #[fg=colour11]#[bg=colour236] %m #[fg=colour11]#[bg=cyan] %d #[bg=black]#[fg=colour11] %H #[fg=colour11]#[bg=cyan] %M '
+set -g status-right '#[fg=colour11]#[bg=cyan] %Y #[fg=colour11]#[bg=colour236] %m #[fg=colour11]#[bg=cyan] %d #[bg=colour236]#[fg=colour11] %H #[fg=colour11]#[bg=cyan] %M '
 
 # Info on left
 set -g status-left-length 30
