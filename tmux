@@ -7,6 +7,7 @@ set -g mouse-resize-pane on
 bind -n C-j new-window
 bind -n C-h prev
 bind -n C-l next
+bind c neww -c '#{pane_current_path}'
 
 set-window-option -g mode-keys vi
 bind h select-pane -L
