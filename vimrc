@@ -144,3 +144,4 @@ endfunction
 map <C-n> :call Notes()<CR>
 
 highlight clear SignColumn
+set t_ut=
