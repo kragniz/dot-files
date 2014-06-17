@@ -95,6 +95,7 @@ vnoremap <C-k> :m '<-2<CR>gv=gv
 
 set dict=/usr/share/dict/words
 set complete-=k complete+=k
+set tags=./tags;/
 
 "set ofu=syntaxcomplete#Complete
 set completeopt=menuone,longest,preview
