@@ -10,7 +10,7 @@ Plugin 'gmarik/vundle'
 Plugin 'itchyny/lightline.vim'
 Plugin 'airblade/vim-gitgutter'
 Plugin 'scrooloose/syntastic'
-Plugin 'kien/ctrlp'
+Bundle 'kien/ctrlp.vim'
 
 Plugin 'python.vim'
 Plugin 'python_match.vim'
