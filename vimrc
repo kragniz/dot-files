@@ -11,6 +11,7 @@ Plugin 'itchyny/lightline.vim'
 Plugin 'airblade/vim-gitgutter'
 Plugin 'scrooloose/syntastic'
 Bundle 'kien/ctrlp.vim'
+Bundle 'jonathanfilip/vim-lucius'
 
 Plugin 'python.vim'
 Plugin 'python_match.vim'
