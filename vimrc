@@ -10,6 +10,8 @@ Plugin 'gmarik/vundle'
 Plugin 'itchyny/lightline.vim'
 Plugin 'airblade/vim-gitgutter'
 Plugin 'scrooloose/syntastic'
+Bundle 'kien/ctrlp.vim'
+Bundle 'jonathanfilip/vim-lucius'
 
 Plugin 'python.vim'
 Plugin 'python_match.vim'
@@ -19,6 +21,8 @@ filetype plugin indent on
 
 let g:syntastic_mode_map = { 'mode': 'active', 'active_filetypes': [],'passive_filetypes': ['python'] }
 nnoremap <C-w>E :SyntasticCheck<CR> :SyntasticToggleMode<CR>
+
+let g:syntastic_c_include_dirs = ['/usr/include/gtk-3.0/', '/usr/include/librsvg-2.0/', '/usr/include/cairo/', '/usr/include/glib-2.0/']
 
 set fileencodings=ucs-bom,utf-8,cp936,big5,euc-jp,euc-kr,gb18030,latin1       
 set tabstop=4       " Number of spaces that a <Tab> in the file counts for.
@@ -48,7 +52,8 @@ set ruler
 set listchars=tab:>.,trail:.,extends:#,nbsp:. " Highlight problematic whitespace
 
 set gdefault        " the /g flag on :s substitutions by default
-set background=light
+set background=dark
+colorscheme lucius
 set mouse=a
 set so=4
 
@@ -95,6 +100,7 @@ vnoremap <C-k> :m '<-2<CR>gv=gv
 
 set dict=/usr/share/dict/words
 set complete-=k complete+=k
+set tags=./tags;/
 
 "set ofu=syntaxcomplete#Complete
 set completeopt=menuone,longest,preview
@@ -144,3 +150,4 @@ endfunction
 map <C-n> :call Notes()<CR>
 
 highlight clear SignColumn
+set t_ut=

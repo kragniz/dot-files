@@ -38,7 +38,7 @@ fi
 
 eval "`dircolors -b`"
 alias ls='ls --color=auto --group-directories-first'
-alias grep='egrep --color=auto'
+alias grep='grep --color=auto'
 
 # ls whenever cding to a directory
 cd() {
@@ -53,6 +53,10 @@ mkc() {
 mkr() {
     # make repo
     mkdir "$@" && cd "$@" && git init
+}
+
+function pcat() {
+    pygmentize -f terminal256 -O style=tango -g $1
 }
 
 alias editor='vim'
