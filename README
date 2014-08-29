@@ -1,10 +1,6 @@
 This is a bunch of my personal configuration files for various pieces of
 software. Feel free to clone/change/do whatever to the stuff in here.
 
-Packages you should install:
-    conky
-    openbox
-    dmenu
-    mpd
-    mpdscribble
-    tmux
+Quick install:
+
+    $ curl https://raw.githubusercontent.com/kragniz/dot-files/master/setup | bash
