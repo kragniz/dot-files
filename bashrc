@@ -101,8 +101,8 @@ alias lla='ls -la'
 alias g='git'
 alias gt='git'
 alias gd='git diff'
-alias gll='git log --stat --graph'
-alias gl='git log --graph --all --abbrev-commit --pretty=format:'\''%C(red)%d%x20%C(yellow)%h%x20%C(green)%an%x20 %Creset%s %Cred(%cr)'\'
+alias gll='git log --stat --graph --no-merges'
+alias gl='git log --graph --all --abbrev-commit --no-merges --pretty=format:'\''%C(red)%d%x20%C(yellow)%h%x20%C(green)%an%x20 %Creset%s %Cred(%cr)'\'
 
 #pretend I'm in vi
 alias ':x'='exit'
@@ -120,7 +120,7 @@ inst() {
     sudo apt-get install $@
 }
 
-alias eth="sudo dhclient eth0"
+lias eth="sudo dhclient eth0"
 
 GOPATH=$HOME/go
 
