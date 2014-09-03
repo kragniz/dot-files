@@ -1,6 +1,6 @@
 [user]
-	name = Louis Taylor
-	email = kragniz@gmail.com
+    name = Louis Taylor
+    email = kragniz@gmail.com
 
 [color]
     branch = auto
@@ -27,5 +27,7 @@
     todo = grep -n -e TODO -e FIXME -e XXX -e OPTIMIZE
 
 [push]
-	default = simple
+    default = simple
 
+[gitreview]
+    username = kragniz

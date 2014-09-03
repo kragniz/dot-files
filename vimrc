@@ -34,6 +34,7 @@ set smarttab
 set list " show whitespace
 set showcmd
 set relativenumber
+set number
 set showmatch
 set lazyredraw " don't redraw during macros
 set hlsearch
