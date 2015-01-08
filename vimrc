@@ -145,10 +145,5 @@ match OverLength /\%81v.\+/
 
 command Kana set keymap=kana
 
-function! Notes()
-    split $HOME/.hyoki/notes
-endfunction
-map <C-n> :call Notes()<CR>
-
 highlight clear SignColumn
 set t_ut=
