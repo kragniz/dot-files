@@ -71,6 +71,9 @@ set nospell
 filetype plugin indent on
 syntax on
 
+" set text width to 72 in commit messages
+au FileType gitcommit set tw=72
+
 " don't expand tabs in go files
 au BufRead,BufNewFile *.go set noexpandtab
 " Fmt go files on every save
