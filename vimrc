@@ -50,7 +50,6 @@ set wildmenu " display a menu of filenames
 " command).function! Chomp(str)
 set formatoptions=c,q,r,t
 set ruler
-set listchars=tab:>.,trail:.,extends:#,nbsp:. " Highlight problematic whitespace
 
 set gdefault        " the /g flag on :s substitutions by default
 set background=dark
