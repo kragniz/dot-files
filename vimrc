@@ -29,6 +29,12 @@ set tabstop=4       " Number of spaces that a <Tab> in the file counts for.
 set shiftwidth=4    " Number of spaces to use for each step of (auto)indent.
 set textwidth=79    " Maximum width of text that is being inserted.
 
+if exists('+colorcolumn')
+    set colorcolumn=+1
+else
+    au BufWinEnter * let w:m2=matchadd('ErrorMsg', '\%>80v.\+', -1)
+endif
+
 set expandtab
 set smarttab
 set list " show whitespace
@@ -63,6 +69,9 @@ set nospell
 
 filetype plugin indent on
 syntax on
+
+" set text width to 72 in commit messages
+au FileType gitcommit set tw=72
 
 " don't expand tabs in go files
 au BufRead,BufNewFile *.go set noexpandtab
