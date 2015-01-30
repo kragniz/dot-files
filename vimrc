@@ -92,19 +92,6 @@ nnoremap <leader>l :tabprevious<CR>
 nnoremap <leader>h :tabnext<CR>
 nnoremap <leader>n :tabnew<CR>
 
-" use C-j and C-k to move lines up and down in:
-" normal mode
-nnoremap <C-j> :m .+1<CR>==
-nnoremap <C-k> :m .-2<CR>==
-
-" insert mode
-inoremap <C-j> <ESC>:m .+1<CR>==gi
-inoremap <C-k> <ESC>:m .-2<CR>==gi
-
-" visual mode
-vnoremap <C-j> :m '>+1<CR>gv=gv
-vnoremap <C-k> :m '<-2<CR>gv=gv
-
 set dict=/usr/share/dict/words
 set complete-=k complete+=k
 set tags=./tags;/
