@@ -128,11 +128,6 @@ function! DmenuOpen(cmd)
     execute a:cmd . " " . fname
 endfunction
 
-" use ctrl-t to open file in a new tab
-" use ctrl-f to open file in current buffer
-map <c-t> :call DmenuOpen("tabe")<cr>
-map <c-f> :call DmenuOpen("e")<cr>
-
 highlight OverLength ctermbg=red ctermfg=white
 match OverLength /\%81v.\+/
 
