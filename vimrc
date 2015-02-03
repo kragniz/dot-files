@@ -78,6 +78,9 @@ au BufRead,BufNewFile *.go set noexpandtab
 " Fmt go files on every save
 autocmd FileType go autocmd BufWritePre <buffer> Fmt
 
+" get some juicy nix syntax
+autocmd BufRead,BufNewFile *.nix setfiletype nix
+
 " set arduino files as c++
 autocmd BufNewFile,BufReadPost *.ino,*.pde set filetype=cpp
 " set .md files as markdown
