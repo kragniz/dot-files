@@ -120,7 +120,7 @@ inst() {
     sudo apt-get install $@
 }
 
-lias eth="sudo dhclient eth0"
+alias eth="sudo dhclient eth0"
 
 GOPATH=$HOME/go
 

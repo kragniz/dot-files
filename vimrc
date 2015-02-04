@@ -56,7 +56,6 @@ set wildmenu " display a menu of filenames
 " command).function! Chomp(str)
 set formatoptions=c,q,r,t
 set ruler
-set listchars=tab:>.,trail:.,extends:#,nbsp:. " Highlight problematic whitespace
 
 set gdefault        " the /g flag on :s substitutions by default
 set background=dark
@@ -71,10 +70,16 @@ set nospell
 filetype plugin indent on
 syntax on
 
+" set text width to 72 in commit messages
+au FileType gitcommit set tw=72
+
 " don't expand tabs in go files
 au BufRead,BufNewFile *.go set noexpandtab
 " Fmt go files on every save
 autocmd FileType go autocmd BufWritePre <buffer> Fmt
+
+" get some juicy nix syntax
+autocmd BufRead,BufNewFile *.nix setfiletype nix
 
 " set arduino files as c++
 autocmd BufNewFile,BufReadPost *.ino,*.pde set filetype=cpp
