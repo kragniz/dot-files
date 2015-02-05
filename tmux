@@ -1,5 +1,5 @@
 # mouse bindings
-setw -g mode-mouse on
+setw -g mode-mouse off
 setw -g mouse-select-pane on
 setw -g mouse-select-window on
 set -g mouse-resize-pane on

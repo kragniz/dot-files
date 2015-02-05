@@ -29,6 +29,12 @@ set tabstop=4       " Number of spaces that a <Tab> in the file counts for.
 set shiftwidth=4    " Number of spaces to use for each step of (auto)indent.
 set textwidth=79    " Maximum width of text that is being inserted.
 
+if exists('+colorcolumn')
+    set colorcolumn=+1
+else
+    au BufWinEnter * let w:m2=matchadd('ErrorMsg', '\%>80v.\+', -1)
+endif
+
 set expandtab
 set smarttab
 set list " show whitespace
@@ -50,7 +56,6 @@ set wildmenu " display a menu of filenames
 " command).function! Chomp(str)
 set formatoptions=c,q,r,t
 set ruler
-set listchars=tab:>.,trail:.,extends:#,nbsp:. " Highlight problematic whitespace
 
 set gdefault        " the /g flag on :s substitutions by default
 set background=dark
@@ -65,10 +70,16 @@ set nospell
 filetype plugin indent on
 syntax on
 
+" set text width to 72 in commit messages
+au FileType gitcommit set tw=72
+
 " don't expand tabs in go files
 au BufRead,BufNewFile *.go set noexpandtab
 " Fmt go files on every save
 autocmd FileType go autocmd BufWritePre <buffer> Fmt
+
+" get some juicy nix syntax
+autocmd BufRead,BufNewFile *.nix setfiletype nix
 
 " set arduino files as c++
 autocmd BufNewFile,BufReadPost *.ino,*.pde set filetype=cpp
@@ -85,19 +96,6 @@ map // :noh<CR><c-l>
 nnoremap <leader>l :tabprevious<CR>
 nnoremap <leader>h :tabnext<CR>
 nnoremap <leader>n :tabnew<CR>
-
-" use C-j and C-k to move lines up and down in:
-" normal mode
-nnoremap <C-j> :m .+1<CR>==
-nnoremap <C-k> :m .-2<CR>==
-
-" insert mode
-inoremap <C-j> <ESC>:m .+1<CR>==gi
-inoremap <C-k> <ESC>:m .-2<CR>==gi
-
-" visual mode
-vnoremap <C-j> :m '>+1<CR>gv=gv
-vnoremap <C-k> :m '<-2<CR>gv=gv
 
 set dict=/usr/share/dict/words
 set complete-=k complete+=k
@@ -134,11 +132,6 @@ function! DmenuOpen(cmd)
     endif
     execute a:cmd . " " . fname
 endfunction
-
-" use ctrl-t to open file in a new tab
-" use ctrl-f to open file in current buffer
-map <c-t> :call DmenuOpen("tabe")<cr>
-map <c-f> :call DmenuOpen("e")<cr>
 
 highlight OverLength ctermbg=red ctermfg=white
 match OverLength /\%81v.\+/
