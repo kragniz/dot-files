@@ -10,6 +10,7 @@ Plugin 'gmarik/vundle'
 Plugin 'itchyny/lightline.vim'
 Plugin 'airblade/vim-gitgutter'
 Plugin 'scrooloose/syntastic'
+Plugin 'reedes/vim-colors-pencil'
 Bundle 'kien/ctrlp.vim'
 Bundle 'jonathanfilip/vim-lucius'
 
@@ -57,9 +58,13 @@ set wildmenu " display a menu of filenames
 set formatoptions=c,q,r,t
 set ruler
 
+colorscheme pencil
+set background=light
+let g:lightline = {
+      \ 'colorscheme': 'solarized',
+      \ }
+
 set gdefault        " the /g flag on :s substitutions by default
-set background=dark
-colorscheme lucius
 set mouse=a
 set so=4
 
