@@ -1,45 +1,35 @@
-!kuro
-*color0:#202020
-*color8:#4f362b
+*foreground:   #E8DFD6
+*background:   #021B21
+*cursorColor:  #2E3340
+*color0:       #032C36
+*color8:       #065F73
+*color1:       #C2454E
+*color9:       #EF5847
+*color2:       #7CBF9E
+*color10:      #A2D9B1
+*color3:       #8A7A63
+*color11:      #BEB090
+*color4:       #2E3340
+*color12:      #61778D
+*color5:       #FF5879
+*color13:      #FF99A1
+*color6:       #44B5B1
+*color14:      #9ED9D8
+*color7:       #F2F1B9
+*color15:      #F6F6C9
 
-!aka
-*color1:#da1657
-*color9:#da4375
-
-!midori
-*color2:#3ea250
-*color10:#6cb87a
-
-!kiiro
-*color3:#e3d33d
-*color11:#e3da84
-
-!ao
-*color4:#3ea290
-*color12:#8ca8a3
-
-!momoiro
-*color5:#ff850d
-*color13:#ffa64f
-
-!mizuiro
-*color6:#8c16da
-*color14:#a167c7
-
-!shiro
-*color7:#e9e9e9
-*color15:#fdfdfd
-
-URxvt*background: rgba:0000/0000/0200/d800
-URxvt*foreground: #b5b5b5
+!URxvt*background: rgba:0000/0000/0200/d800
+!URxvt*foreground: #b5b5b5
 URxvt*depth: 32
 ! fonts
 ! run "fc-list" for a list of available fonts
-URxvt*font: xft:Terminus:pixelsize=9
+URxvt*font: xft:Terminus:pixelsize=10,\
+            xft:Kochi Gothic:antialias=false,\
 
 Urxvt*perl-lib:    /usr/lib/urxvt/perl/
-URxvt.perl-ext-common: tabbed,default,matcher,clipboard
-URxvt.url-launcher: google-chrome
+!URxvt.perl-ext-common: tabbed,default,matcher,clipboard
+URxvt.perl-ext-common: default,matcher,clipboard
+URxvt.url-launcher: firefox
 URxvt.matcher.button: 1
 
 URxvt*termName: xterm
