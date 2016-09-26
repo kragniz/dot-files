@@ -38,7 +38,7 @@ endif
 
 set expandtab
 set smarttab
-set list " show whitespace
+"set list " show whitespace
 set showcmd
 set relativenumber
 set number
@@ -92,8 +92,8 @@ autocmd BufNewFile,BufReadPost *.ino,*.pde set filetype=cpp
 autocmd BufRead,BufNewFile *.md set filetype=markdown
 
 " Highlight current word
-highlight flicker cterm=bold ctermfg=white
-au CursorMoved <buffer> exe 'match flicker /\V\<'.escape(expand('<cword>'), '/').'\>/'
+"highlight flicker cterm=bold ctermfg=white
+"au CursorMoved <buffer> exe 'match flicker /\V\<'.escape(expand('<cword>'), '/').'\>/'
 
 map // :noh<CR><c-l>
 
