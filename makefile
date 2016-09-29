@@ -1,4 +1,4 @@
-all: ~/.vimrc bash git ~/bin tmux.conf X openbox dmenu mpd irc gitflow python
+all: ~/.vimrc bash git ~/bin tmux.conf X openbox dmenu mpd irc gitflow python fish
 
 debian:
 	sudo apt-get install vim-nox tmux
@@ -64,3 +64,7 @@ python:
 	cp -a pythonrc ~/.pythonrc.py
 	mkdir -p ~/.config/ipython/profile_default
 	cp -a ipython ~/.config/ipython/profile_default/ipython_config.py
+
+fish:
+	mkdir -p ~/.config/fish
+	cp -a config.fish ~/.config/fish/config.fish
