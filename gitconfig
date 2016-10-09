@@ -1,6 +1,7 @@
 [user]
     name = Louis Taylor
     email = louis@kragniz.eu
+    signingkey = E13E7098
 
 [color]
     branch = auto
