@@ -17,10 +17,9 @@ bash: ~/.bashrc ~/.bash_profile ~/.inputrc ~/.bash_prompt
 ~/.inputrc: inputrc
 	cp -a $? $@
 
-~/.vimrc: vimrc vim vim/bundle/vundle
+~/.vimrc: vimrc
 	cp -a vimrc ~/.vimrc
-	cp -rfavT vim ~/.vim
-	vim +PluginInstall +qall
+	vim +PlugInstall
 
 vim/bundle/vundle:
 	git clone https://github.com/gmarik/vundle.git vim/bundle/vundle
