@@ -32,3 +32,7 @@
 
 [gitreview]
     username = kragniz
+[commit]
+	gpgsign = true
+[credential]
+	helper = cache --timeout=3600
