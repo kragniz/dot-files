@@ -8,6 +8,7 @@ hc emit_hook reload
 
 xsetroot -solid '#5A8E3A'
 feh --bg-fill --no-xinerama '/home/kgz/n²ch/1516547366522.jpg'
+setxkbmap -layout gb
 
 # remove all existing keybindings
 hc keyunbind --all
