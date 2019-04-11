@@ -26,6 +26,10 @@ Plug 'bfrg/vim-cpp-enhanced-highlight'
 
 Plug 'vivien/vim-linux-coding-style'
 
+Plug 'ambv/black'
+
+Plug 'jeffkreeftmeijer/vim-dim'
+
 call plug#end()
 
 let g:lightline = {
@@ -33,12 +37,15 @@ let g:lightline = {
       \ }
 set laststatus=2
 
-set background=light
-"set background=dark
+"set background=light
+set background=dark
+
+colorscheme dim
 
 set expandtab
 set tabstop=4
 set shiftwidth=4
+set number
 
 set ttymouse=xterm2
 set mouse=a
