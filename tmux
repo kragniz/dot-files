@@ -1,20 +1,3 @@
-# mouse bindings
-setw -g mode-mouse off
-setw -g mouse-select-pane on
-setw -g mouse-select-window on
-set -g mouse-resize-pane on
-
-bind -n C-j new-window
-bind -n C-h prev
-bind -n C-l next
-bind c neww -c '#{pane_current_path}'
-
-set-window-option -g mode-keys vi
-bind h select-pane -L
-bind j select-pane -D
-bind k select-pane -U
-bind l select-pane -R
-
 # clock colors
 set-window-option -g clock-mode-style 12
 set-window-option -g clock-mode-colour "#ff8000"
@@ -51,3 +34,19 @@ set -g pane-base-index 1
 
 # A longer scrollback
 set -g history-limit 10000
+
+# vim-tmux-navigator
+is_vim="ps -o state= -o comm= -t '#{pane_tty}' \
+    | grep -iqE '^[^TXZ ]+ +(\\S+\\/)?g?(view|n?vim?x?)(diff)?$'"
+bind-key -n C-h if-shell "$is_vim" "send-keys C-h"  "select-pane -L"
+bind-key -n C-j if-shell "$is_vim" "send-keys C-j"  "select-pane -D"
+bind-key -n C-k if-shell "$is_vim" "send-keys C-k"  "select-pane -U"
+bind-key -n C-l if-shell "$is_vim" "send-keys C-l"  "select-pane -R"
+bind-key -n C-\ if-shell "$is_vim" "send-keys C-\\" "select-pane -l"
+bind-key -T copy-mode-vi C-h select-pane -L
+bind-key -T copy-mode-vi C-j select-pane -D
+bind-key -T copy-mode-vi C-k select-pane -U
+bind-key -T copy-mode-vi C-l select-pane -R
+bind-key -T copy-mode-vi C-\ select-pane -l
+
+set-option -g default-shell /usr/bin/fish
