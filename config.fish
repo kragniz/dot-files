@@ -18,7 +18,10 @@ end
 
 set -x GOPATH $HOME/go
 set -x PATH $PATH $GOPATH/bin
-set -x PATH $PATH /usr/local/go/bin/
+set -x PATH $PATH ~/.local/bin/
+set -x PATH $PATH ~/bin/
+
+set -x EDITOR vim
 
 function fish_prompt
     set_color normal
