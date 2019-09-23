@@ -19,3 +19,9 @@ end
 set -x GOPATH $HOME/go
 set -x PATH $PATH $GOPATH/bin
 set -x PATH $PATH /usr/local/go/bin/
+
+function fish_prompt
+    set_color normal
+    printf "(๑•ᴗ•)⊃━"(prompt_pwd)"━☆ﾟ "
+    set_color normal
+end
