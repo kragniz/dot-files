@@ -24,7 +24,12 @@ set -x PATH $PATH ~/bin/
 set -x EDITOR vim
 
 function fish_prompt
+    if test $status -eq 0
+        set lil_face "•ᴗ•"
+    else
+        set lil_face "•-•"
+    end
     set_color normal
-    printf "(๑•ᴗ•)⊃━"(prompt_pwd)"━☆ﾟ "
+    echo -n "(๑$lil_face)⊃━"(prompt_pwd)"━☆ﾟ "
     set_color normal
 end
