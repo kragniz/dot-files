@@ -30,6 +30,22 @@ function fish_prompt
         set lil_face "•-•"
     end
     set_color normal
+
+    if test "$SHOW_BRANCH" = 1
+        set branch (git rev-parse --abbrev-ref HEAD 2> /dev/null)
+        echo -n "($branch) "
+    end
+
     echo -n "(๑$lil_face)⊃━"(prompt_pwd)"━☆ﾟ "
     set_color normal
+end
+
+function flash_git
+    for i in (seq 0 200); printf "\b"; end
+    test "$SHOW_BRANCH" = 1; and set SHOW_BRANCH 0; or set SHOW_BRANCH 1
+    commandline -f repaint
+end
+
+function fish_user_key_bindings
+    bind \eg flash_git
 end
