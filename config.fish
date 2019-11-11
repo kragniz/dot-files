@@ -49,3 +49,5 @@ end
 function fish_user_key_bindings
     bind \eg flash_git
 end
+
+set -gx SSH_AUTH_SOCK (gnome-keyring-daemon --start | awk -F "=" '$1 == "SSH_AUTH_SOCK" { print $2 }')
