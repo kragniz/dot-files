@@ -47,6 +47,7 @@ set tabstop=4
 set autoindent
 set shiftwidth=4
 set number
+set backspace=indent,eol,start
 
 set ttymouse=xterm2
 set mouse=a
