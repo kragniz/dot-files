@@ -36,3 +36,5 @@
 	gpgsign = true
 [credential]
 	helper = cache --timeout=3600
+[diff]
+	algorithm = histogram
