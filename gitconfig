@@ -27,6 +27,9 @@
 [alias]
     todo = grep -n -e TODO -e FIXME -e XXX -e OPTIMIZE
 
+[pull]
+    rebase = true
+
 [push]
     default = simple
 
