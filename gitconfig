@@ -35,9 +35,19 @@
 
 [gitreview]
     username = kragniz
+
 [commit]
-	gpgsign = true
+    gpgsign = true
+
 [credential]
-	helper = cache --timeout=3600
+    helper = cache --timeout=3600
+
 [diff]
-	algorithm = histogram
+    algorithm = histogram
+
+[sendemail]
+    smtpserver = smtp.gmail.com
+    smtpserverport = 587
+    smtpencryption = tls
+    smtpuser = louis@kragniz.eu
+    from = Louis Taylor <louis@kragniz.eu>
